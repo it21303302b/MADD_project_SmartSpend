@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Smart Spend2</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Categories</string>
+    <string name="title_reminders">Reminders</string>
+</resources>

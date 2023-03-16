@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="subtle_mint">#CFF5E7</color>
+    <color name="green_1">#A0E4CB</color>
+    <color name="green_2">#59C1BD</color>
+    <color name="Blue">#0D4C92</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
