@@ -10,4 +10,20 @@
     <string name="TV_out">Outcome</string>
     <string name="TV_outcome">Rs.-950.00</string>
     <string name="TV_income">Rs.3000.00</string>
+    <string name="btn_daily">Daily</string>
+    <string name="btn_weekly">Weekly</string>
+    <string name="btn_monthly">monthly</string>
+    <string name="btn_yearly">Yearly</string>
+    <string name="TV_day1">16 Thursday</string>
+    <string name="TV_exp1">For the bus</string>
+    <string name="TV_exbal1">-Rs.600.00</string>
+    <string name="TV_day2">15 Wednesday</string>
+    <string name="TV_exp2">For school</string>
+    <string name="TV_exbal2">-Rs.200.00</string>
+    <string name="TV_exp3">Salary</string>
+    <string name="TV_exbal3">RS.3000.00</string>
+    <string name="TV_day3">13 Monday</string>
+    <string name="TV_exp4">Food</string>
+    <string name="TV_exbal4">-Rs.150.00</string>
+    <string name="btn_plus">+</string>
 </resources>
