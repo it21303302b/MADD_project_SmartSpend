@@ -160,7 +160,8 @@
         android:text="@string/TV_expR1"
         android:textSize="@dimen/button_H2textsize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonth1"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView26"
@@ -208,7 +209,8 @@
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonth2"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView29"
@@ -256,7 +258,8 @@
         android:text="@string/TV_expR3"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView32"
@@ -267,7 +270,8 @@
         android:text="@string/TV_exbalRem3"
         android:textColor="@color/red"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView33"
@@ -277,8 +281,9 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="1"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/tvReminderTitle"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
 
@@ -286,12 +291,13 @@
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="46dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="April"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

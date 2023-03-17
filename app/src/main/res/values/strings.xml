@@ -29,7 +29,7 @@
     <string name="TV_addexpense">Add Expense</string>
 
     <string name="TV_ReminderTitle">Today\'s Reminder</string>
-    <string name="TV_month1">1 April</string>
+    <string name="TV_month1">April 1</string>
     <string name="TV_expR1">House Rent</string>
     <string name="TV_exbalRem1">-Rs.16000.00</string>
     <string name="TV_Month2">15 April</string>
@@ -57,5 +57,17 @@
     <string name="btn_addcat">Add Category</string>
     <string name="TV_updatecat">Update category</string>
     <string name="btn_updatecat">Update Category</string>
+    <string name="TV_addrem">Add Reminder</string>
+    <string name="TV_selectRem">Select Reminder Type</string>
+    <string name="edt_RemDescription">Reminder Description</string>
+    <string name="edt_RemAddDate">YYYY/MM/DD</string>
+    <string name="edt_AddDate">YYYY/MM/DD</string>
+    <string name="edt_RemAddTime">00:00</string>
+    <string name="btn_AddReminder">Add Reminder</string>
+    <string name="TV_UpdateRem">Update Reminder</string>
+    <string name="edt_UpdateDesReminder">Update Description</string>
+    <string name="edt_UpdateRemDate">YYYY/MM/DD</string>
+    <string name="edt_UpdateTimeReminder">00:00</string>
+    <string name="btn_UpdateReminder">Update Reminder</string>
 
 </resources>
