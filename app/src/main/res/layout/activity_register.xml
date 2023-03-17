@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_signupWithGoogle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/subtle_mint"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/TV_registerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TV_registerTitle"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <EditText
+        android:id="@+id/ET_inputUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/person_icon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_inputUsername"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_registerTitle" />
+
+    <EditText
+        android:id="@+id/ET_inputPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_security"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_inputPassword"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/ET_inputEmail"
+        app:layout_constraintStart_toStartOf="@+id/ET_inputEmail"
+        app:layout_constraintTop_toBottomOf="@+id/ET_inputEmail" />
+
+    <EditText
+        android:id="@+id/ET_inputConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_security"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_inputConfirmPassword"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/ET_inputPassword"
+        app:layout_constraintStart_toStartOf="@+id/ET_inputPassword"
+        app:layout_constraintTop_toBottomOf="@+id/ET_inputPassword" />
+
+    <EditText
+        android:id="@+id/ET_inputEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_inputEmail"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/ET_inputUsername"
+        app:layout_constraintStart_toStartOf="@+id/ET_inputUsername"
+        app:layout_constraintTop_toBottomOf="@+id/ET_inputUsername" />
+
+    <android.widget.Button
+        android:id="@+id/btn_register"
+        android:layout_width="@dimen/reg_btn_width"
+        android:layout_height="@dimen/reg_btn_height"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/btn_register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/reg_btn_textSize"
+        app:layout_constraintEnd_toEndOf="@+id/ET_inputConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/ET_inputConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/ET_inputConfirmPassword" />
+
+    <TextView
+        android:id="@+id/TV_alreadyHaveAnAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:shadowColor="@color/black"
+        android:text="@string/TV_alreadyHaveAnAccount"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/btn_register"
+        app:layout_constraintStart_toStartOf="@+id/btn_register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
+        />
+
+    <android.widget.Button
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/btn_bg"
+        android:drawableStart="@drawable/google"
+        android:drawablePadding="40dp"
+        android:paddingLeft="20dp"
+        android:text="@string/btn_signupWithGoogle"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/ET_inputConfirmPassword"
+        app:layout_constraintStart_toStartOf="@+id/ET_inputConfirmPassword"
+        app:layout_constraintTop_toBottomOf="@+id/TV_alreadyHaveAnAccount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
