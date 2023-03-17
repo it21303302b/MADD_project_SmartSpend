@@ -27,6 +27,7 @@
     <string name="TV_exbal4">-Rs.150.00</string>
     <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
+
     <string name="TV_registerTitle">Register</string>
     <string name="ET_inputUsername">Username</string>
     <string name="ET_inputEmail">Email</string>
@@ -43,5 +44,37 @@
     <string name="ET_login_password">Enter Password</string>
     <string name="btn_signinWithGoogle">Sign in with Google</string>
     <string name="btn_signupWithGoogle">Sign up with Google</string>
+
+
+    <string name="TV_ReminderTitle">Today\'s Reminder</string>
+    <string name="TV_month1">1 April</string>
+    <string name="TV_expR1">House Rent</string>
+    <string name="TV_exbalRem1">-Rs.16000.00</string>
+    <string name="TV_Month2">15 April</string>
+    <string name="TV_expR2">Water Bill</string>
+    <string name="TV_exbalRem2">-Rs.1500.00</string>
+    <string name="TV_month3">20 April</string>
+    <string name="TV_expR3">Electricity Bill</string>
+    <string name="TV_exbalRem3">-Rs.8000.00</string>
+
+    <string name="btn_exp">Expense</string>
+    <string name="btn_inc">Income</string>
+    <string name="edt_expname">Expense name</string>
+    <string name="edt_description">Description</string>
+    <string name="edt_amount">Amount</string>
+    <string name="TV_cat">Select category</string>
+    <string name="btn_addexp">Add</string>
+    <string name="TV_updateex">Update Expense</string>
+    <string name="btn_updateexp">Update</string>
+    <string name="TV_category">Category</string>
+    <string name="TV_cat1">Food</string>
+    <string name="TV_catdescription">Description</string>
+    <string name="TV_addcat">Add Category</string>
+    <string name="edt_catname">Category</string>
+    <string name="edt_catdescription">Description</string>
+    <string name="btn_addcat">Add Category</string>
+    <string name="TV_updatecat">Update category</string>
+    <string name="btn_updatecat">Update Category</string>
+
 
 </resources>

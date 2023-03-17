@@ -12,10 +12,30 @@
         android:theme="@style/Theme.SmartSpend"
         tools:targetApi="31">
         <activity
+
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
+
+
+            android:name=".AddReminder"
+
+
+            android:exported="false" />
+        <activity
+
+
+
+            android:name=".UpdateCategory"
+            android:exported="false" />
+        <activity
+            android:name=".AddCategory"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateExpence"
+
+
             android:exported="false" />
         <activity
             android:name=".AddExpences"

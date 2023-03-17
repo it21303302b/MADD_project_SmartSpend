@@ -22,18 +22,15 @@
     <TextView
         android:id="@+id/text_home"
         android:layout_width="390dp"
-        android:layout_height="6dp"
+        android:layout_height="1dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
@@ -135,7 +132,7 @@
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="16dp"
         android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
+        android:backgroundTint="@color/orange"
         android:text="@string/btn_daily"
         android:textSize="@dimen/button_textsize"
         app:layout_constraintEnd_toStartOf="@+id/button4"
@@ -201,6 +198,7 @@
 
     <TextView
         android:id="@+id/textView9"
+        android:onClick="UpdateExpence"
         android:textSize="@dimen/button_H2textsize"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
@@ -224,6 +222,7 @@
 
     <TextView
         android:id="@+id/textView14"
+        android:onClick="UpdateExpence"
         android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -247,6 +246,7 @@
 
     <TextView
         android:id="@+id/textView18"
+        android:onClick="UpdateExpence"
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
         android:layout_width="wrap_content"
@@ -283,6 +283,7 @@
 
     <TextView
         android:id="@+id/textView22"
+        android:onClick="UpdateExpence"
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
         android:layout_width="wrap_content"
@@ -309,9 +310,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         android:backgroundTint="@color/orange"
         android:clickable="true"
+        android:onClick="addExpence"
         android:src="@drawable/plus_icon"
         app:layout_constraintBottom_toTopOf="@+id/text_home"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -356,14 +358,19 @@
         android:id="@+id/floatingActionButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:src="@drawable/person_icon"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="loginActivity"
         />
+
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
+
 
     <!--    <Button-->
 <!--        android:id="@+id/button6"-->
