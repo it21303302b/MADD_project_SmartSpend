@@ -18,7 +18,7 @@
         tools:layout="@layout/fragment_categories" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_reminders"
         android:name="com.example.smartspend.ui.Reminders.RemindersFragment"
         android:label="@string/title_reminders"
         tools:layout="@layout/fragment_reminders" />

@@ -3,4 +3,11 @@
     <string name="title_home">Home</string>
     <string name="title_category">Categories</string>
     <string name="title_reminders">Reminders</string>
+    <string name="TV_Tbalance">Total Balance</string>
+    <string name="TV_bal">Rs.2050.00</string>
+    <string name="TV_tmonth">This month</string>
+    <string name="TV_in">Income</string>
+    <string name="TV_out">Outcome</string>
+    <string name="TV_outcome">Rs.-950.00</string>
+    <string name="TV_income">Rs.3000.00</string>
 </resources>
