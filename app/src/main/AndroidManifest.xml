@@ -15,6 +15,12 @@
 
             android:name=".AddReminder"
 
+
+            android:exported="false" />
+        <activity
+
+
+
             android:name=".UpdateCategory"
             android:exported="false" />
         <activity
