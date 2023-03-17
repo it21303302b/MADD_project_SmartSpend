@@ -9,4 +9,7 @@
     <dimen name="button_H2textsize">18sp</dimen>
     <dimen name="buttonp_width">60dp</dimen>
     <dimen name="buttonp_height">60dp</dimen>
+    <dimen name="reg_btn_height">40dp</dimen>
+    <dimen name="reg_btn_width">140dp</dimen>
+    <dimen name="reg_btn_textSize">16dp</dimen>
 </resources>

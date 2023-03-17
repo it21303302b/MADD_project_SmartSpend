@@ -361,7 +361,9 @@
         android:clickable="true"
         android:src="@drawable/person_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="loginActivity"
+        />
 
     <!--    <Button-->
 <!--        android:id="@+id/button6"-->
