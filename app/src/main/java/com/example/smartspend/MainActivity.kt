@@ -15,8 +15,29 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+
     fun addReminder(view:View){
         val intent = Intent(this,AddReminder::class.java)
+        startActivity(intent)
+
+
+    fun addExpence(view: View){
+        val intent = Intent(this, AddExpences::class.java)
+        startActivity(intent)
+    }
+
+    fun UpdateExpence(view: View){
+        val intent = Intent(this, UpdateExpence::class.java)
+        startActivity(intent)
+    }
+
+    fun addCategory(view: View){
+        val intent = Intent(this, AddCategory::class.java)
+        startActivity(intent)
+    }
+
+    fun updateCategory(view: View){
+        val intent = Intent(this, UpdateCategory::class.java)
         startActivity(intent)
 
     }
