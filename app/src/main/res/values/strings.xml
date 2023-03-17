@@ -27,4 +27,22 @@
     <string name="TV_exbal4">-Rs.150.00</string>
     <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
+    <string name="btn_exp">Expense</string>
+    <string name="btn_inc">Income</string>
+    <string name="edt_expname">Expense name</string>
+    <string name="edt_description">Description</string>
+    <string name="edt_amount">Amount</string>
+    <string name="TV_cat">Select category</string>
+    <string name="btn_addexp">Add</string>
+    <string name="TV_updateex">Update Expense</string>
+    <string name="btn_updateexp">Update</string>
+    <string name="TV_category">Category</string>
+    <string name="TV_cat1">Food</string>
+    <string name="TV_catdescription">Description</string>
+    <string name="TV_addcat">Add Category</string>
+    <string name="edt_catname">Category</string>
+    <string name="edt_catdescription">Description</string>
+    <string name="btn_addcat">Add Category</string>
+    <string name="TV_updatecat">Update category</string>
+    <string name="btn_updatecat">Update Category</string>
 </resources>

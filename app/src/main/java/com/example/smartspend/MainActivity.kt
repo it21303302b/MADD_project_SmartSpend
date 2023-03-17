@@ -1,6 +1,8 @@
 package com.example.smartspend
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -12,6 +14,26 @@ import com.example.smartspend.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    fun addExpence(view: View){
+        val intent = Intent(this, AddExpences::class.java)
+        startActivity(intent)
+    }
+
+    fun UpdateExpence(view: View){
+        val intent = Intent(this, UpdateExpence::class.java)
+        startActivity(intent)
+    }
+
+    fun addCategory(view: View){
+        val intent = Intent(this, AddCategory::class.java)
+        startActivity(intent)
+    }
+
+    fun updateCategory(view: View){
+        val intent = Intent(this, UpdateCategory::class.java)
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
