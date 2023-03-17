@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+
+    fun addReminder(view:View){
+        val intent = Intent(this,AddReminder::class.java)
+        startActivity(intent)
+
+
     fun addExpence(view: View){
         val intent = Intent(this, AddExpences::class.java)
         startActivity(intent)
@@ -33,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     fun updateCategory(view: View){
         val intent = Intent(this, UpdateCategory::class.java)
         startActivity(intent)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
