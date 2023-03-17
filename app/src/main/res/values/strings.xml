@@ -27,4 +27,14 @@
     <string name="TV_exbal4">-Rs.150.00</string>
     <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
+    <string name="TV_ReminderTitle">Today\'s Reminder</string>
+    <string name="TV_month1">1 April</string>
+    <string name="TV_expR1">House Rent</string>
+    <string name="TV_exbalRem1">-Rs.16000.00</string>
+    <string name="TV_Month2">15 April</string>
+    <string name="TV_expR2">Water Bill</string>
+    <string name="TV_exbalRem2">-Rs.1500.00</string>
+    <string name="TV_month3">20 April</string>
+    <string name="TV_expR3">Electricity Bill</string>
+    <string name="TV_exbalRem3">-Rs.8000.00</string>
 </resources>
