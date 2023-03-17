@@ -26,4 +26,5 @@
     <string name="TV_exp4">Food</string>
     <string name="TV_exbal4">-Rs.150.00</string>
     <string name="btn_plus">+</string>
+    <string name="TV_addexpense">Add Expense</string>
 </resources>
