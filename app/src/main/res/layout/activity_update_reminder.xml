@@ -7,19 +7,31 @@
     android:background="@color/subtle_mint"
     tools:context=".UpdateReminder">
 
-    <Button
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/head_back"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button9"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/Blue"
         android:text="@string/btn_UpdateReminder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_btn"
+        android:textColor="@color/white"/>
 
     <Spinner
         android:id="@+id/spinner4"
@@ -38,9 +50,9 @@
         android:layout_width="378dp"
         android:layout_height="167dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/round_co2"
+        android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,10 +64,10 @@
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/TV_UpdateRem"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/button_H2textsize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +84,8 @@
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar7" />
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar7"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/editTextTextPersonName10"
@@ -85,7 +98,8 @@
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView37"
