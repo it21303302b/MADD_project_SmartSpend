@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/subtle_mint"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/TV_loginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TV_loginTitle"
+        android:textColor="@color/black"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <EditText
+        android:id="@+id/ET_login_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/person_icon"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_login_username"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_loginTitle" />
+
+    <EditText
+        android:id="@+id/ET_login_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_security"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/ET_login_password"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/ET_login_username"
+        app:layout_constraintStart_toStartOf="@+id/ET_login_username"
+        app:layout_constraintTop_toBottomOf="@+id/ET_login_username" />
+
+    <TextView
+        android:id="@+id/TV_forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:shadowColor="@color/black"
+        android:text="@string/TV_forgotPassword"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
+        app:layout_constraintTop_toBottomOf="@+id/ET_login_password" />
+
+    <android.widget.Button
+        android:id="@+id/btn_login"
+        android:layout_width="@dimen/reg_btn_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/btn_login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/reg_btn_textSize"
+        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
+        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
+        app:layout_constraintTop_toBottomOf="@+id/TV_forgotPassword" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
+        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+        <TextView
+            android:id="@+id/TV_dontHaveAnAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/DontHaveAnAccount"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/TV_signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TV_signUp"
+            android:textColor="@color/Blue"
+            android:textSize="16sp"
+            android:onClick="registerActivity"
+            />
+
+    </LinearLayout>
+
+    <android.widget.Button
+        android:id="@+id/btn_signinWithGoogle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/btn_bg"
+        android:drawableStart="@drawable/google"
+        android:drawablePadding="40dp"
+        android:paddingLeft="20dp"
+        android:text="@string/btn_signinWithGoogle"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
+        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

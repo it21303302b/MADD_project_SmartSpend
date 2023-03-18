@@ -362,8 +362,15 @@
         android:layout_marginEnd="16dp"
         android:clickable="true"
         android:src="@drawable/person_icon"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="loginActivity"
+        />
+
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
+
 
     <!--    <Button-->
 <!--        android:id="@+id/button6"-->
