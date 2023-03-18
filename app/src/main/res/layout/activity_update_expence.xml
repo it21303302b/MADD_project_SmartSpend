@@ -7,14 +7,25 @@
     android:background="@color/subtle_mint"
     tools:context=".AddExpences">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/head_back"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/TV_updateex"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/button_H2textsize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +36,7 @@
         android:layout_width="90dp"
         android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/orange"
         android:text="@string/btn_exp"
         android:textSize="@dimen/button_textsize"
@@ -53,13 +64,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/round_co2"
+        android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithGoogle"
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -71,7 +83,8 @@
         android:text="@string/edt_amount"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -83,7 +96,8 @@
         android:text="@string/edt_expname"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -95,7 +109,8 @@
         android:text="@string/edt_description"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView13"
@@ -120,18 +135,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button7"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/Blue"
         android:text="@string/btn_updateexp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_btn"
+        android:textColor="@color/white"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

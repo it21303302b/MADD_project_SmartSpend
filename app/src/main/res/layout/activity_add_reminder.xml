@@ -7,14 +7,26 @@
     android:background="@color/subtle_mint"
     tools:context=".AddReminder">
 
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar6"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/head_back"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar4"
         android:layout_width="378dp"
         android:layout_height="167dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/round_co2"
+        android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +38,10 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/TV_addrem"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="@dimen/button_H2textsize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +58,8 @@
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar4"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar4"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar4" />
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar4"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/textView36"
@@ -63,14 +76,15 @@
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="377dp"
-        android:layout_height="0dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+        app:layout_constraintTop_toBottomOf="@+id/textView36"
+        />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
@@ -83,20 +97,22 @@
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar4"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        android:textColor="@color/white"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button8"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/Blue"
         android:text="@string/btn_AddReminder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/round_btn"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
