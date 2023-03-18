@@ -134,7 +134,6 @@
             android:text="@string/TV_signUp"
             android:textColor="@color/Blue"
             android:textSize="16sp"
-            android:onClick="registerActivity"
             />
 
     </LinearLayout>
