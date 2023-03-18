@@ -47,7 +47,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AddReminder::class.java)
         startActivity(intent)
 
-
+    }
+    fun updateReminder(view: View) {
+        val intent = Intent(this, UpdateReminder::class.java)
+        startActivity(intent)
     }
     fun addExpence(view: View) {
         val intent = Intent(this, AddExpences::class.java)

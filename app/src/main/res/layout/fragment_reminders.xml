@@ -51,7 +51,7 @@
         android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:gravity="center"
+        android:gravity="center|right"
         android:text="@string/TV_ReminderTitle"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -89,7 +89,7 @@
         android:layout_height="@dimen/button_height"
         android:layout_marginStart="16dp"
         android:layout_marginTop="27dp"
-        android:backgroundTint="@color/orange"
+        android:backgroundTint="@color/green_2"
         android:text="@string/btn_daily"
         android:textSize="@dimen/button_textsize"
         app:layout_constraintEnd_toStartOf="@+id/btnWeeklyRem"
@@ -115,7 +115,7 @@
         android:layout_width="90dp"
         android:layout_height="@dimen/button_height"
         android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
+        android:backgroundTint="@color/orange"
         android:text="@string/btn_monthly"
         android:textSize="@dimen/button_textsize"
         app:layout_constraintEnd_toStartOf="@+id/btnYearlyRem"
@@ -160,7 +160,8 @@
         android:text="@string/TV_expR1"
         android:textSize="@dimen/button_H2textsize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth1" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonth1"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView26"
@@ -208,7 +209,8 @@
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMonth2"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView29"
@@ -256,7 +258,8 @@
         android:text="@string/TV_expR3"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView32"
@@ -267,18 +270,20 @@
         android:text="@string/TV_exbalRem3"
         android:textColor="@color/red"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="updateReminder"/>
 
     <TextView
         android:id="@+id/textView33"
         android:layout_width="68dp"
         android:layout_height="62dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="1"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvReminderTitle"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
 
@@ -286,12 +291,13 @@
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="April"
         android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -306,5 +312,48 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:onClick="addReminder"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/delete_icon_red"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/delete_icon_red"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/delete_icon_red"
+        app:layout_constraintBottom_toTopOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvYearR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="10dp"
+        android:text="2023"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView33"
+        app:layout_constraintStart_toEndOf="@+id/tvReminderTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
