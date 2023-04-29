@@ -79,36 +79,36 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edt_amount"
+        android:hint="@string/edt_amount"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/edt_description"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_category"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edt_expname"
+        android:hint="@string/edt_expname"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edt_description"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edt_description"
+        android:hint="@string/edt_description"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edt_category"
         android:textColor="@color/white" />
 
     <TextView
@@ -135,7 +135,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button7"
+        android:id="@+id/btn_addCategory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

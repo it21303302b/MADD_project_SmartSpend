@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/subtle_mint"
-    tools:context=".AddExpences">
+    tools:context=".AddCategory">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar6"
@@ -48,33 +48,33 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_category"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edt_catname"
+        android:hint="@string/edt_catname"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edt_description"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edt_catdescription"
+        android:hint="@string/edt_catdescription"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edt_category"
         android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button7"
+        android:id="@+id/btn_addCategory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
