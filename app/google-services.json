@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "645122871366",
+    "project_id": "smartspend-4cbee",
+    "storage_bucket": "smartspend-4cbee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645122871366:android:7b4adea657f752ba49fa47",
+        "android_client_info": {
+          "package_name": "com.example.smartspend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645122871366-iuqj530eilmq224982cskkhvorbpmc1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqIGuCqoo4Mz92Jfq7N_MugwEn7iou3lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645122871366-iuqj530eilmq224982cskkhvorbpmc1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
