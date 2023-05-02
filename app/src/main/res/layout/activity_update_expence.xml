@@ -83,11 +83,11 @@
         android:text="@string/edt_amount"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/edtUpdateDescription"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtupdateCategory"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
@@ -100,7 +100,7 @@
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtUpdateDescription"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
@@ -109,7 +109,7 @@
         android:text="@string/edt_description"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/edtupdateCategory"
         android:textColor="@color/white"/>
 
     <TextView
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button7"
+        android:id="@+id/updatebtn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

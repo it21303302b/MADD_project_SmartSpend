@@ -74,11 +74,22 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun updateCategory(view: View) {
-        val intent = Intent(this, UpdateCategory::class.java)
-        startActivity(intent)
+//    fun updateCategory(view: View) {
+//        val intent = Intent(this, UpdateCategory::class.java)
+//        startActivity(intent)
+//    }
 
+    fun updateCategory(view: View) {
+        val categoryID = view.tag?.toString() ?: ""
+        if (categoryID.isNotEmpty()) {
+            val intent = Intent(this, UpdateCategory::class.java)
+            intent.putExtra("categoryID", categoryID)
+            startActivity(intent)
+        }
     }
+
+
+
 
 
 }

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.smartspend.databinding.ActivityAddcategoryBinding
-import com.example.smartspend.databinding.ActivityMainBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -18,15 +17,17 @@ class AddCategory : AppCompatActivity() {
         binding = ActivityAddcategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnAddCategory.setOnClickListener {
+        database = FirebaseDatabase.getInstance().getReference("Categories")
 
+        binding.btnAddCategory.setOnClickListener {
             val category = binding.edtCategory.text.toString()
             val description = binding.edtDescription.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("Categories")
-            val Category = Category(category,description)
-            database.child(category).setValue(Category).addOnSuccessListener {
+            val categoryID = database.push().key // Generate a unique category ID
 
+            val categoryData = categoryID?.let { it1 -> Category(category, description, it1) }
+
+            database.child(categoryID!!).setValue(categoryData).addOnSuccessListener {
                 binding.edtCategory.text.clear()
                 binding.edtDescription.text.clear()
 
