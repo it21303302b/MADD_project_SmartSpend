@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smartspend.Category
+import com.example.smartspend.CategoryModel
 import com.example.smartspend.R
+import com.example.smartspend.adapters.CategoryAdapter
 import com.example.smartspend.databinding.FragmentCategoriesBinding
 import com.example.smartspend.databinding.FragmentRemindersBinding
 import com.google.firebase.database.*
@@ -20,15 +20,14 @@ class CategoryFragment : Fragment() {
 
     private var _binding: FragmentCategoriesBinding? = null
 
+    private lateinit var catRecyclerView: RecyclerView
+    private lateinit var catList: ArrayList<CategoryModel>
+    private lateinit var dbRef: DatabaseReference
+
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
-    private lateinit var dbref : DatabaseReference
-    private lateinit var userRecyclerView: RecyclerView
-    private lateinit var userArrayList: ArrayList<Category>
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,33 +45,35 @@ class CategoryFragment : Fragment() {
             textView.text = it
         }
 
-        userRecyclerView = root.findViewById(R.id.categoryList)
-        userRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
-        userRecyclerView.setHasFixedSize(true)
+        catRecyclerView = root.findViewById(R.id.categoryListRV)
+        catRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        catRecyclerView.setHasFixedSize(true)
 
-        userArrayList = arrayListOf<Category>()
+        catList = arrayListOf<CategoryModel>()
+
         getCategoryData()
+
 
         return root
     }
 
+    private fun getCategoryData(){
+        catRecyclerView.visibility = View.GONE
 
-    private fun getCategoryData() {
-        dbref = FirebaseDatabase.getInstance().getReference("Categories")
+        dbRef = FirebaseDatabase.getInstance().getReference("CategoryDB")
 
-        dbref.addValueEventListener(object : ValueEventListener{
+        dbRef.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-
+                catList.clear()
                 if (snapshot.exists()){
-                    for (categorySnapshot in snapshot.children){
-
-                        val category = categorySnapshot.getValue(Category::class.java)
-
-                        userArrayList.add(category!!)
-
+                    for (catSnap in snapshot.children){
+                        val catData = catSnap.getValue(CategoryModel::class.java)
+                        catList.add(catData!!)
                     }
+                    val mAdapter = CategoryAdapter(catList)
+                    catRecyclerView.adapter = mAdapter
 
-                    userRecyclerView.adapter = CategoryAdapter(userArrayList)
+                    catRecyclerView.visibility = View.VISIBLE
                 }
             }
 
@@ -81,6 +82,7 @@ class CategoryFragment : Fragment() {
             }
 
         })
+
     }
 
     override fun onDestroyView() {
