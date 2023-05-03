@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun updateCategory(view: View) {
-        val intent = Intent(this, UpdateCategory::class.java)
-        startActivity(intent)
-
-    }
+//    fun updateCategory(view: View) {
+//        val intent = Intent(this, UpdateCategory::class.java)
+//        startActivity(intent)
+//
+//    }
 
 
 }

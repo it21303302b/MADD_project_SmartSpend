@@ -12,9 +12,19 @@ import com.example.smartspend.R
 class CategoryAdapter(private val catList: ArrayList<CategoryModel>):
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
+    private lateinit var mListner: OnItemClickListner
+
+    interface OnItemClickListner{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListner(clickListner: OnItemClickListner){
+        mListner = clickListner
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.category_list, parent,false)   //inflating the card with data
-        return ViewHolder(itemView)
+        return ViewHolder(itemView , mListner)
     }
 
     override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
@@ -27,10 +37,16 @@ class CategoryAdapter(private val catList: ArrayList<CategoryModel>):
         return catList.size
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View , clickListner: OnItemClickListner) : RecyclerView.ViewHolder(itemView){
 
         val tvCatName : TextView = itemView.findViewById(R.id.tvCategory)
         val tvCatDescription : TextView = itemView.findViewById(R.id.tvDescription)
+
+        init {
+            itemView.setOnClickListener {
+                clickListner.onItemClick(adapterPosition)
+            }
+        }
 
     }
 
