@@ -116,6 +116,8 @@
     <string name="catIDdata">exampleID</string>
     <string name="catname">Example catagory</string>
     <string name="tvcurentDescription">Example description</string>
+    <string name="deleteCategorybtn">Delete category</string>
+    <string name="btn_deleteCat">delete category</string>
 
 
 </resources>
