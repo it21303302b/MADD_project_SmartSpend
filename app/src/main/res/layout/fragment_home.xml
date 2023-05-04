@@ -6,18 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/textView16"
-        android:textSize="@dimen/button_Htextsize"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/TV_day2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/expencesListRV"
+        android:layout_width="415dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintVertical_bias="0.482" />
 
     <TextView
         android:id="@+id/text_home"
@@ -125,186 +122,6 @@
         app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
 
-    <Button
-        android:id="@+id/button"
-        android:textStyle="bold"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/btn_daily"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/button2"
-        android:textStyle="bold"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_yearly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/button3"
-        android:textStyle="bold"
-        android:layout_width="90dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_monthly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/button4"
-        android:textStyle="bold"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_weekly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_Htextsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
-        android:text="@string/TV_day1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:onClick="UpdateExpence"
-        android:textSize="@dimen/button_H2textsize"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_exp1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:textSize="@dimen/button_H2textsize"
-        android:textColor="@color/red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbal1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:onClick="UpdateExpence"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_exp2"
-        android:textSize="@dimen/button_H2textsize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:textColor="@color/red"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbal2"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:onClick="UpdateExpence"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_exp3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:textColor="@color/green_2"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbal3"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:textSize="@dimen/button_Htextsize"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/TV_day3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:onClick="UpdateExpence"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_exp4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:textColor="@color/red"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbal4"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton2"
         android:layout_width="wrap_content"
@@ -317,42 +134,6 @@
         android:src="@drawable/plus_icon"
         app:layout_constraintBottom_toTopOf="@+id/text_home"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton3"
@@ -367,8 +148,7 @@
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
 
-    app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
+
 
 
     <!--    <Button-->

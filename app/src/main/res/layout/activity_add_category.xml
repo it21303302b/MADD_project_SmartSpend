@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/subtle_mint"
-    tools:context=".AddCategory">
+    tools:context=".AddExpences">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar6"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
-        android:id="@+id/edt_category"
+        android:id="@+id/edtAddcategory"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
@@ -61,7 +61,7 @@
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/edt_description"
+        android:id="@+id/edtAddDescription"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
@@ -70,11 +70,11 @@
         android:hint="@string/edt_catdescription"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/edt_category"
+        app:layout_constraintTop_toBottomOf="@+id/edtAddcategory"
         android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAddCategory"
+        android:id="@+id/submitCategory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
