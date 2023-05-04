@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/subtle_mint"
-    tools:context=".UpdateCategory">
+    tools:context=".UpdateExpence">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -32,13 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="381dp"
         android:layout_height="350dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
@@ -171,6 +170,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

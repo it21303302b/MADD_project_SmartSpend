@@ -10,10 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.smartspend.CategoryModel
-import com.example.smartspend.ExpenceModel
+import com.example.smartspend.*
 import com.example.smartspend.R
-import com.example.smartspend.UpdateCategory
 import com.example.smartspend.adapters.CategoryAdapter
 import com.example.smartspend.databinding.FragmentHomeBinding
 import com.google.firebase.database.*
@@ -76,7 +74,7 @@ class HomeFragment : Fragment() {
 
                     mAdapter.setOnItemClickListner(object : ExpenceAdapter.OnItemClickListner{
                         override fun onItemClick(position: Int) {
-                            val intent = Intent(requireActivity(), UpdateCategory::class.java)
+                            val intent = Intent(requireActivity(), UpdateExpence::class.java)
 
 
                             //put extra

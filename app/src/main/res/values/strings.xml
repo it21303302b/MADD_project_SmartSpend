@@ -118,6 +118,12 @@
     <string name="tvcurentDescription">Example description</string>
     <string name="deleteCategorybtn">Delete category</string>
     <string name="btn_deleteCat">delete category</string>
+    <string name="expName">Expence Name</string>
+    <string name="expAmount">Amount</string>
+    <string name="expAmountVal">Example amount</string>
+    <string name="expID">Expence Id</string>
+    <string name="expName1">Expence Name</string>
+    <string name="expNameex">Example name</string>
 
 
 </resources>
