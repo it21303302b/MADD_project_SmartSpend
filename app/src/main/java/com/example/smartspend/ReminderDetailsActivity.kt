@@ -61,13 +61,26 @@ class ReminderDetailsActivity : AppCompatActivity() {
         val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
         val mTask = dbRef.removeValue()
 
-        mTask.addOnSuccessListener {
-            Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
-            finish() // Close this activity and return to the previous activity
-        }.addOnFailureListener { error ->
-            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
-        }
+        // Create a confirmation dialog
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("Are you sure you want to delete this reminder?")
+            .setCancelable(false)
+            .setPositiveButton("Yes") { _, _ ->
+                // Delete the record
+                mTask.addOnSuccessListener {
+                    Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
+                    finish() // Close this activity and return to the previous activity
+                }.addOnFailureListener { error ->
+                    Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+                }
+            }
+            .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
+
+        // Show the dialog
+        val alert = builder.create()
+        alert.show()
     }
+
 
 
     private fun initView() {
