@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/subtle_mint"
-    tools:context=".UpdateReminder">
+    tools:context=".ReminderDetailsActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar6"
@@ -19,36 +19,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button9"
+        android:id="@+id/btn_DeleteRemData"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/btn_UpdateReminder"
+        android:background="@drawable/btn_del_bg"
+        android:text="@string/btn_DeleteReminderr"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/round_btn"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_UpdateRemData"
+        app:layout_constraintVertical_bias="0.8" />
 
-    <Spinner
-        android:id="@+id/spinner4"
-        android:layout_width="377dp"
-        android:layout_height="0dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_UpdateRemData"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/round_btn"
+        android:text="@string/btn_UpdateReminder"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar7" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar7"
-        android:layout_width="378dp"
-        android:layout_height="167dp"
+        android:layout_width="395dp"
+        android:layout_height="343dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
@@ -66,51 +71,58 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/TV_UpdateRem"
+        android:text="@string/TV_ReminderDetails"
         android:textColor="@color/white"
         android:textSize="@dimen/button_H2textsize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/TV_ReminderDescription"
+        android:layout_width="212dp"
+        android:layout_height="51dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/edt_UpdateDesReminder"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar7"
-        android:textColor="@color/white"/>
-
-    <EditText
-        android:id="@+id/editTextTextPersonName10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/edt_UpdateRemDate"
-        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar7" />
 
     <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/TV_selectRem"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_H2textsize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar7" />
+        android:id="@+id/TV_ReminderDate"
+        android:layout_width="212dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
+        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderDescription" />
+
+    <TextView
+        android:id="@+id/TV_ReminderAmount"
+        android:layout_width="212dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        app:layout_constraintHorizontal_bias="0.064"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
+        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderDate" />
+
+    <TextView
+        android:id="@+id/TV_ReminderType"
+        android:layout_width="212dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
+        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderAmount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

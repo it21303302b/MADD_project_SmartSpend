@@ -3,18 +3,19 @@ package com.example.smartspend
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.smartspend.databinding.ActivityMainBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
 
     fun loginActivity(view: View){
         val intent = Intent(this, LoginActivity::class.java)
@@ -32,6 +33,9 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Database Integration
+        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -56,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun updateReminder(view: View) {
-        val intent = Intent(this, UpdateReminder::class.java)
+        val intent = Intent(this, ReminderDetailsActivity::class.java)
         startActivity(intent)
     }
     fun addExpence(view: View) {

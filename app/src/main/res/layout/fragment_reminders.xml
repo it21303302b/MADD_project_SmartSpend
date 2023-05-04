@@ -7,31 +7,6 @@
     tools:context=".ui.Reminders.RemindersFragment">
 
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
-        android:layout_width="380dp"
-        android:layout_height="181dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/round_co"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        android:src="@drawable/person_icon"
-        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
-
     <TextView
         android:id="@+id/text_reminders"
         android:layout_width="400dp"
@@ -45,268 +20,13 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tvReminderTitle"
-        android:layout_width="163dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center|right"
-        android:text="@string/TV_ReminderTitle"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="163dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="House Rent"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/tvReminderTitle" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Rs.16000.00"
-        android:textColor="@color/orange"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <Button
-        android:id="@+id/btnDailyRem"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_daily"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/btnWeeklyRem"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/btnWeeklyRem"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_weekly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/btnMonthlyRem"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnDailyRem"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/btnMonthlyRem"
-        android:layout_width="90dp"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/btn_monthly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/btnYearlyRem"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnWeeklyRem"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <Button
-        android:id="@+id/btnYearlyRem"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_yearly"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnMonthlyRem"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
-
-    <TextView
-        android:id="@+id/tvMonth1"
-        android:layout_width="83dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/TV_month1"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_Htextsize"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDailyRem" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:onClick="updateReminder"
-        android:textColor="@color/black"
-        android:layout_width="94dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_expR1"
-        android:textSize="@dimen/button_H2textsize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth1"
-        />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbalRem1"
-        android:textColor="@color/red"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView25"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-    <TextView
-        android:id="@+id/tvMonth2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/button_Htextsize"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/TV_Month2"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/TV_expR2"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_H2textsize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMonth2"
-        android:onClick="updateReminder"/>
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/button_H2textsize"
-        android:layout_marginEnd="48dp"
-        android:text="@string/TV_exbalRem2"
-        android:textColor="@color/red"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView28"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/divider5"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/button_Htextsize"
-        android:layout_marginStart="24dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:text="@string/TV_month3"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
-        android:textSize="@dimen/button_H2textsize"
-        android:text="@string/TV_expR3"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30"
-        android:onClick="updateReminder"/>
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:textSize="@dimen/button_H2textsize"
-        android:text="@string/TV_exbalRem3"
-        android:textColor="@color/red"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView31"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="updateReminder"/>
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="68dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="1"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/tvReminderTitle"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="5dp"
-        android:gravity="center"
-        android:text="April"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="45dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="148dp"
         android:backgroundTint="@color/orange"
         android:clickable="true"
         android:onClick="addReminder"
@@ -314,47 +34,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/delete_icon_red"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/delete_icon_red"
-        app:layout_constraintBottom_toTopOf="@+id/textView29"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/delete_icon_red"
-        app:layout_constraintBottom_toTopOf="@+id/textView32"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV_ReminderData"
+        android:layout_width="410dp"
+        android:layout_height="731dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/rem_list_item" />
 
     <TextView
-        android:id="@+id/tvYearR"
+        android:id="@+id/TV_LoadingData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="10dp"
-        android:text="2023"
-        android:textColor="@color/white"
+        android:text="Loading Data....."
+        android:textSize="28sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView33"
-        app:layout_constraintStart_toEndOf="@+id/tvReminderTitle" />
-
-
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf = "parent"
+        app:layout_constraintStart_toStartOf= "parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

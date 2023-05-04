@@ -21,8 +21,8 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar4"
-        android:layout_width="378dp"
-        android:layout_height="167dp"
+        android:layout_width="380dp"
+        android:layout_height="239dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
@@ -48,13 +48,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/ET_AddReminderDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/edt_RemDescription"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar4"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar4"
@@ -66,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:text="@string/TV_selectRem"
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
@@ -74,34 +75,34 @@
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar4" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/AddReminder_spinner"
         android:layout_width="377dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/ET_AddReminderDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:hint="@string/edt_AddDate"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar4"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/ET_AddReminderDescription"
         android:textColor="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button8"
+        android:id="@+id/btn_AddReminder"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -113,6 +114,34 @@
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/round_btn"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/error_text_view"
+        android:layout_width="191dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_AddReminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddReminder_spinner"
+        app:layout_constraintVertical_bias="0.526" />
+
+    <EditText
+        android:id="@+id/ET_ReminderAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/edt_RemValue"
+        android:textSize="22sp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar4"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar4"
+        app:layout_constraintTop_toBottomOf="@+id/ET_AddReminderDate"
         android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

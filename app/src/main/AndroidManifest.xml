@@ -33,7 +33,7 @@
             android:name=".AddReminder"
             android:exported="false" />
         <activity
-            android:name=".UpdateReminder"
+            android:name=".ReminderDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".UpdateCategory"
