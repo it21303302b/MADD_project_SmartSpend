@@ -124,6 +124,8 @@
     <string name="expID">Expence Id</string>
     <string name="expName1">Expence Name</string>
     <string name="expNameex">Example name</string>
+    <string name="edtAmount">Amount</string>
+    <string name="btn_updateExp">update expence</string>
 
 
 </resources>
