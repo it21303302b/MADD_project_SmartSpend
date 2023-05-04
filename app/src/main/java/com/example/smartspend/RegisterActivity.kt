@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val name = binding.ETName.text.toString()
             val age = binding.ETAge.text.toString()
-            val occupation = binding.ETOccupation.toString()
+            val occupation = binding.ETOccupation.text.toString()
             val email = binding.emailET.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
@@ -85,6 +85,8 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
             }
         }
+
+
     }
 
 }

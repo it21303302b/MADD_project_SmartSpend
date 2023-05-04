@@ -121,6 +121,7 @@
     <string name="confirm_new_password">Confirm New Password</string>
     <string name="reset_password">Reset Password</string>
     <string name="back_to_login">Back to Login</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

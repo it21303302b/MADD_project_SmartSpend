@@ -4,6 +4,7 @@ package com.example.smartspend
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -88,5 +89,16 @@ class ProfileActivity : AppCompatActivity() {
                     .show()
             }
         }
+    }
+
+    fun onLogoutButtonClick(view: View) {
+        // Sign out the user
+        FirebaseAuth.getInstance().signOut()
+
+        // Navigate to the sign-in screen
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
     }
 }
