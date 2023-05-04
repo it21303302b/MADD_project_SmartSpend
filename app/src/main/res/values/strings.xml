@@ -122,6 +122,9 @@
     <string name="reset_password">Reset Password</string>
     <string name="back_to_login">Back to Login</string>
     <string name="logout">Logout</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
 
 
 </resources>

@@ -1,11 +1,11 @@
 package com.example.smartspend
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -19,8 +19,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var userEmailView: TextView
     private lateinit var nameView: TextView
-    private lateinit var ageView: TextView
-    private lateinit var occupationView: TextView
+    private lateinit var genderView: TextView
     private lateinit var updatePasswordButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,8 +31,7 @@ class ProfileActivity : AppCompatActivity() {
 
         userEmailView = findViewById(R.id.TV_userEmailView)
         nameView = findViewById(R.id.TV_UserNameView)
-        ageView = findViewById(R.id.TV_UserAgeView)
-        occupationView = findViewById(R.id.TV_UserOccupationView)
+        genderView = findViewById(R.id.TV_GenderView)
         updatePasswordButton = findViewById<Button>(R.id.btn_update_password)
 
         if (currentUser != null) {
@@ -47,8 +45,7 @@ class ProfileActivity : AppCompatActivity() {
                 val user = dataSnapshot.getValue(User::class.java)
                 if (user != null) {
                     nameView.text = user.name
-                    ageView.text = user.age
-                    occupationView.text = user.occupation
+                    genderView.text = user.gender
                 }
             }.addOnFailureListener {
                 // Handle database read failure
@@ -89,6 +86,14 @@ class ProfileActivity : AppCompatActivity() {
                     .show()
             }
         }
+
+        val backArrow = findViewById<ImageView>(R.id.backArrow)
+        backArrow.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     fun onLogoutButtonClick(view: View) {

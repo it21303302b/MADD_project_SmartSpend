@@ -2,6 +2,8 @@ package com.example.smartspend
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.RadioButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smartspend.databinding.ActivityRegisterBinding
@@ -31,14 +33,19 @@ class RegisterActivity : AppCompatActivity() {
         }
         binding.btnRegister.setOnClickListener {
             val name = binding.ETName.text.toString()
-            val age = binding.ETAge.text.toString()
-            val occupation = binding.ETOccupation.text.toString()
             val email = binding.emailET.text.toString()
             val pass = binding.passET.text.toString()
             val confirmPass = binding.confirmPassEt.text.toString()
 
+            // Get selected gender from radio button
+            var gender = ""
+            val selectedGenderId = binding.radioGroup.checkedRadioButtonId
+            if (selectedGenderId != -1) {
+                val selectedGender = findViewById<RadioButton>(selectedGenderId)
+                gender = selectedGender.text.toString()
+            }
 
-            if (name.isNotEmpty() && age.isNotEmpty() && occupation.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
+            if (name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
                 if (pass == confirmPass) {
 
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
@@ -49,23 +56,22 @@ class RegisterActivity : AppCompatActivity() {
                                 .build()
                             user?.updateProfile(userProfileChangeRequest)
 
-                            // Update the user's name, age, and occupation in the database
+                            // Update the user's name and gender in the database
                             val userId = user?.uid
                             if (userId != null) {
                                 val userMap = hashMapOf<String, String>(
                                     "name" to name,
-                                    "age" to age,
-                                    "occupation" to occupation
+                                    "gender" to gender
                                 )
                                 usersRef.child(userId).setValue(userMap)
                                     .addOnSuccessListener {
                                         runOnUiThread {
-                                            Toast.makeText(this, "Name, age, and occupation uploaded successfully!", Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(this, "Name and gender uploaded successfully!", Toast.LENGTH_SHORT).show()
                                         }
                                     }
                                     .addOnFailureListener {
                                         runOnUiThread {
-                                            Toast.makeText(this, "Failed to upload name, age, and occupation", Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(this, "Failed to upload name and gender", Toast.LENGTH_SHORT).show()
                                         }
                                     }
 
@@ -86,6 +92,12 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
+        val alreadyLoginView = findViewById<TextView>(R.id.TV_alreadyLogin)
+
+        alreadyLoginView.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

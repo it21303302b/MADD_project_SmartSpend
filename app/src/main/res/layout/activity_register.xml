@@ -98,44 +98,44 @@
         app:layout_constraintEnd_toEndOf="@+id/passET"
         app:layout_constraintStart_toStartOf="@+id/passET"
         app:layout_constraintTop_toBottomOf="@+id/passET"
-        app:passwordToggleEnabled="true"/>
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/ic_password_visibilty"/>
 
-    <EditText
-        android:id="@+id/ET_Age"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/genderTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_age"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/enter_age"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/ET_name"
-        app:layout_constraintStart_toStartOf="@+id/passET"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassEt" />
+        android:text="Gender:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPassEt"
+        android:textColor="@color/black"/>
 
-    <EditText
-        android:id="@+id/ET_Occupation"
-        android:layout_width="0dp"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_occupation"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="@string/enter_occupation"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/passET"
-        app:layout_constraintStart_toStartOf="@+id/passET"
-        app:layout_constraintTop_toBottomOf="@+id/ET_Age"
-        tools:ignore="LabelFor" />
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genderTextView">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+
+    </RadioGroup>
 
     <EditText
         android:id="@+id/emailET"
@@ -160,7 +160,7 @@
         android:id="@+id/btn_register"
         android:layout_width="@dimen/reg_btn_width"
         android:layout_height="@dimen/reg_btn_height"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_bg"
         android:text="@string/btn_register"
         android:textColor="@color/white"
@@ -169,7 +169,7 @@
         app:layout_constraintEnd_toEndOf="@+id/confirmPassEt"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/confirmPassEt"
-        app:layout_constraintTop_toBottomOf="@+id/ET_Occupation" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -189,27 +189,32 @@
 
     <TextView
         android:id="@+id/TV_alreadyRegistered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="201dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:text="@string/TV_alreadyHaveAnAccount"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintEnd_toStartOf="@+id/TV_alreadyLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
     <TextView
         android:id="@+id/TV_alreadyLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_width="98dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:layout_weight="1"
         android:paddingLeft="10dp"
         android:text="@string/btn_login"
         android:textColor="@color/Blue"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/TV_alreadyRegistered"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
