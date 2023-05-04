@@ -40,18 +40,30 @@ class UpdateCategory : AppCompatActivity() {
         }
     }
 
-    private fun deleteRecord(id:String) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("CategoryDB").child(id)
+//    private fun deleteRecord(id:String) {
+//        val dbRef = FirebaseDatabase.getInstance().getReference("CategoryDB").child(id)
+//        val mTask = dbRef.removeValue()
+//
+//        mTask.addOnSuccessListener {
+//            Toast.makeText(this,"Catagory deleted",Toast.LENGTH_SHORT).show()
+//
+//            val intent = Intent(this, CategoryFragment::class.java)
+//            startActivity(intent)
+//            finish()
+//        }.addOnFailureListener { error->
+//            Toast.makeText(this,"Deleting err ${error.message}",Toast.LENGTH_SHORT).show()
+//        }
+//    }
+
+    private fun deleteRecord(rId: String) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("CategoryDB").child(rId)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this,"Catagory deleted",Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, CategoryFragment::class.java)
-            startActivity(intent)
-            finish()
-        }.addOnFailureListener { error->
-            Toast.makeText(this,"Deleting err ${error.message}",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Catagory deleted", Toast.LENGTH_LONG).show()
+            finish() // Close this activity and return to the previous activity
+        }.addOnFailureListener { error ->
+            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
         }
     }
 
