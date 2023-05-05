@@ -15,6 +15,9 @@ import com.example.smartspend.R
 import com.example.smartspend.adapters.CategoryAdapter
 import com.example.smartspend.databinding.FragmentHomeBinding
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class HomeFragment : Fragment() {
 
@@ -60,6 +63,10 @@ class HomeFragment : Fragment() {
         expRecyclerView.visibility = View.GONE
 
         dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB")
+
+//        val tvExpenceDate: TextView = binding.tvExpenceDate
+//        tvExpenceDate.text = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(Date())
+
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
