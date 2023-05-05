@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/subtle_mint"
-    tools:context=".AddExpences">
+    tools:context=".UpdateExpence">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -32,13 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="381dp"
-        android:layout_height="123dp"
+        android:layout_height="350dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
@@ -48,45 +47,130 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <TextView
+        android:id="@+id/tvCatId"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/catId"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
+        app:layout_constraintTop_toTopOf="@+id/materialToolbar" />
+
+    <TextView
+        android:id="@+id/tvCatIdshow"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/catIDdata"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/tvCatId" />
+
+    <TextView
+        android:id="@+id/tvCategory"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/edt_catname"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvCatIdshow" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
+    <TextView
+        android:id="@+id/tvShowCurrentCategory"
         android:layout_width="330dp"
         android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/catname"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/edt_catdescription"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvShowCurrentCategory" />
+
+    <TextView
+        android:id="@+id/tvCurrentDescription"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/tvcurentDescription"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
+        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button7"
+        android:id="@+id/btnUpdate"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_btn"
+        android:text="@string/btn_updatecat"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnDeleteCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDeleteCategory"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/btn_updatecat"
+        android:background="@drawable/round_btn"
+        android:text="@string/btn_deleteCat"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/round_btn"
-        android:textColor="@color/white"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

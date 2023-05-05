@@ -1,5 +1,6 @@
 package com.example.smartspend.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,21 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.smartspend.*
+import com.example.smartspend.R
+import com.example.smartspend.adapters.CategoryAdapter
 import com.example.smartspend.databinding.FragmentHomeBinding
+import com.google.firebase.database.*
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
+
+    private lateinit var expRecyclerView: RecyclerView
+    private lateinit var expList: ArrayList<ExpenceModel>
+    private lateinit var dbRef: DatabaseReference
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,8 +43,64 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        expRecyclerView = root.findViewById(R.id.expencesListRV)
+        expRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        expRecyclerView.setHasFixedSize(true)
+
+        expList = arrayListOf<ExpenceModel>()
+
+        getExpenceData()
+
         return root
     }
+
+    private fun getExpenceData(){
+
+        expRecyclerView.visibility = View.GONE
+
+        dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB")
+
+        dbRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                expList.clear()
+                if (snapshot.exists()){
+                    for (catSnap in snapshot.children){
+                        val expData = catSnap.getValue(ExpenceModel::class.java)
+                        expList.add(expData!!)
+                    }
+                    val mAdapter = ExpenceAdapter(expList)
+                    expRecyclerView.adapter = mAdapter
+
+                    mAdapter.setOnItemClickListner(object : ExpenceAdapter.OnItemClickListner{
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(requireActivity(), UpdateExpence::class.java)
+
+
+                            //put extra
+                            intent.putExtra("expenceId",expList[position].expenceId)
+                            intent.putExtra("expenceName",expList[position].expenceName)
+                            intent.putExtra("expenceAmount",expList[position].expenceAmount)
+                            startActivity(intent)
+
+
+                        }
+
+
+                    })
+
+                    expRecyclerView.visibility = View.VISIBLE
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

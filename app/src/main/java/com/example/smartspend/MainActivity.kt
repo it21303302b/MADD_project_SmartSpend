@@ -55,6 +55,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    fun onProfileButtonClick(view: View) {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+    }
+
     fun addReminder(view: View) {
         val intent = Intent(this, AddReminder::class.java)
         startActivity(intent)
@@ -79,11 +84,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun updateCategory(view: View) {
-        val intent = Intent(this, UpdateCategory::class.java)
-        startActivity(intent)
-
-    }
+//    fun updateCategory(view: View) {
+//        val intent = Intent(this, UpdateCategory::class.java)
+//        startActivity(intent)
+//
+//    }
 
 
 }

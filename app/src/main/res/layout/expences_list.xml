@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="16dp"
+    android:backgroundTint="@color/Blue"
+    >
+
+
+        <TextView
+            android:id="@+id/tvExpenceDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="16 Tuesday"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvExpenceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="50dp"
+            android:text="For fuel"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tvExpenceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="50dp"
+        android:text="Rs.6000"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+
+
+
+
+</androidx.cardview.widget.CardView>
