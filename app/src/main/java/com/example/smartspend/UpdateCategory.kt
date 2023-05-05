@@ -1,6 +1,5 @@
 package com.example.smartspend
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,7 +7,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.smartspend.ui.Categories.CategoryFragment
 import com.google.firebase.database.FirebaseDatabase
 
 class UpdateCategory : AppCompatActivity() {
@@ -85,7 +83,7 @@ class UpdateCategory : AppCompatActivity() {
     private fun openUpdateDialog(categoryId: String, categoryName: String) {
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
-        val mDialogView = inflater.inflate(R.layout.update_dialog,null)
+        val mDialogView = inflater.inflate(R.layout.update_dialog_category,null)
 
         mDialog.setView(mDialogView)
 
