@@ -14,6 +14,7 @@ import com.example.smartspend.*
 import com.example.smartspend.R
 import com.example.smartspend.adapters.CategoryAdapter
 import com.example.smartspend.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,7 +63,8 @@ class HomeFragment : Fragment() {
 
         expRecyclerView.visibility = View.GONE
 
-        dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB")
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid // Get the current user's UID
+        dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(userId) // Add the UID to the DatabaseReference path
 
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -75,20 +77,22 @@ class HomeFragment : Fragment() {
                         expData?.expenceAmount?.toDoubleOrNull()?.let { totalExpence += it } // Add the expenceAmount to totalExpence
                     }
                     val mAdapter = ExpenceAdapter(expList)
-                    expRecyclerView.adapter = mAdapter
-
-                    mAdapter.setOnItemClickListner(object : ExpenceAdapter.OnItemClickListner{
+                    mAdapter.setOnItemClickListener(object : ExpenceAdapter.OnItemClickListener {
                         override fun onItemClick(position: Int) {
-                            val intent = Intent(requireActivity(), UpdateExpence::class.java)
+                            if (expList.isNotEmpty()) {
+                                val intent = Intent(requireActivity(), UpdateExpence::class.java)
 
-                            //put extra
-                            intent.putExtra("expenceId",expList[position].expenceId)
-                            intent.putExtra("expenceName",expList[position].expenceName)
-                            intent.putExtra("expenceDescription",expList[position].expenceDescription)
-                            intent.putExtra("expenceAmount",expList[position].expenceAmount)
-                            startActivity(intent)
+                                //put extra
+                                intent.putExtra("expenceId",expList[position].expenceId)
+                                intent.putExtra("expenceName",expList[position].expenceName)
+                                intent.putExtra("expenceDescription",expList[position].expenceDescription)
+                                intent.putExtra("expenceAmount",expList[position].expenceAmount)
+                                startActivity(intent)
+                            }
                         }
                     })
+
+                    expRecyclerView.adapter = mAdapter // Set the adapter to the RecyclerView
 
                     expRecyclerView.visibility = View.VISIBLE
                 }

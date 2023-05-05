@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -43,14 +44,19 @@ class UpdateExpence : AppCompatActivity() {
     }
 
     private fun deleteRecord(rId: String) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(rId)
-        val mTask = dbRef.removeValue()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            val dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(currentUser.uid).child(rId)
+            val mTask = dbRef.removeValue()
 
-        mTask.addOnSuccessListener {
-            Toast.makeText(this, "Expence deleted", Toast.LENGTH_LONG).show()
-            finish() // Close this activity and return to the previous activity
-        }.addOnFailureListener { error ->
-            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+            mTask.addOnSuccessListener {
+                Toast.makeText(this, "Expense deleted", Toast.LENGTH_LONG).show()
+                finish() // Close this activity and return to the previous activity
+            }.addOnFailureListener { error ->
+                Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -96,15 +102,20 @@ class UpdateExpence : AppCompatActivity() {
         alertDialog.show()
 
         btnUpdateCategory.setOnClickListener{
-            updateExpenceData(
-                expenceId,
-                etExpName.text.toString(),
-                etExpDescription.text.toString(),
-                etAmount.text.toString()
-            )
-            Toast.makeText(applicationContext,"Expence updated",Toast.LENGTH_SHORT).show()
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
+            val expenceId = intent.getStringExtra("expenceId").toString()
+            if (userId != null) {
+                updateExpenceData(
+                    userId,
+                    expenceId,
+                    etExpName.text.toString(),
+                    etExpDescription.text.toString(),
+                    etAmount.text.toString()
+                )
+            }
+            Toast.makeText(applicationContext,"Expense updated",Toast.LENGTH_SHORT).show()
 
-            //setting updated data to textViews
+            // setting updated data to textViews
             tvShowCurrentExpence.text = etExpName.text.toString()
             tvExpDescription.text = etExpDescription.text.toString()
             tvExpAmounVal.text = etAmount.text.toString()
@@ -115,12 +126,13 @@ class UpdateExpence : AppCompatActivity() {
     }
 
     private fun updateExpenceData(
-        id:String,
+        userId: String,
+        id: String,
         expName: String,
         expdescription: String,
-        expAmount:String
-    ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(id)
+        expAmount: String
+    ) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(userId).child(id)
         val calendar = Calendar.getInstance()
         val expInfo = ExpenceModel(
             id,
@@ -130,7 +142,18 @@ class UpdateExpence : AppCompatActivity() {
             DateFormat.getDateInstance(DateFormat.MEDIUM).format(calendar.time)
         )
         dbRef.setValue(expInfo)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Expense updated successfully", Toast.LENGTH_LONG).show()
+                // Update the displayed data
+                tvShowCurrentExpence.text = expName
+                tvExpDescription.text = expdescription
+                tvExpAmounVal.text = expAmount
+            }
+            .addOnFailureListener { error ->
+                Toast.makeText(this, "Updating expense failed: ${error.message}", Toast.LENGTH_LONG).show()
+            }
     }
+
 
 
 }
