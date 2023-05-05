@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
@@ -83,9 +84,15 @@ class ProfileActivity : AppCompatActivity() {
                         }
                     }
                     .setNegativeButton("Cancel", null)
-                    .show()
+                    .create()
+                    .apply {
+                        show()
+                        getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getColor(R.color.black))
+                        getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getColor(R.color.black))
+                    }
             }
         }
+
 
         val backArrow = findViewById<ImageView>(R.id.backArrow)
         backArrow.setOnClickListener {
