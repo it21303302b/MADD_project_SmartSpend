@@ -45,7 +45,7 @@ class ExpenceAdapter (private val expList: ArrayList<ExpenceModel>):
 
         init {
             itemView.setOnClickListener {
-                clickListner.onItemClick(adapterPosition)
+                clickListner.onItemClick(adapterPosition)  //clicking anywhare on cardview
             }
         }
 

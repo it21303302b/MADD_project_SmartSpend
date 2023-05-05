@@ -80,6 +80,7 @@ class HomeFragment : Fragment() {
                             //put extra
                             intent.putExtra("expenceId",expList[position].expenceId)
                             intent.putExtra("expenceName",expList[position].expenceName)
+                            intent.putExtra("expenceDescription",expList[position].expenceDescription)
                             intent.putExtra("expenceAmount",expList[position].expenceAmount)
                             startActivity(intent)
 

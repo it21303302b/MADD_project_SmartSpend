@@ -112,21 +112,6 @@
     <string name="edt_UpdateRemDate">YYYY/MM/DD</string>
     <string name="edt_UpdateTimeReminder">00:00</string>
     <string name="btn_UpdateReminder">Update Reminder</string>
-<!--<<<<<<< HEAD-->
-    <string name="enter_email">Enter Email</string>
-    <string name="enter_occupation">Enter Occupation</string>
-    <string name="enter_age">Enter Age</string>
-    <string name="update_password">Update Password</string>
-    <string name="enter_current_password">Enter Current Password</string>
-    <string name="enter_new_password">Enter New Password</string>
-    <string name="confirm_new_password">Confirm New Password</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="back_to_login">Back to Login</string>
-    <string name="logout">Logout</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="gender">Gender</string>
-<!--=======-->
     <string name="catId">Category ID</string>
     <string name="catIDdata">exampleID</string>
     <string name="catname">Example catagory</string>
@@ -139,7 +124,6 @@
     <string name="expID">Expence Id</string>
     <string name="expName1">Expence Name</string>
     <string name="expNameex">Example name</string>
-<!--&gt;>>>>>> ee65723dfaea33b82da71b50657ecedaea417601-->
 
 
 </resources>
