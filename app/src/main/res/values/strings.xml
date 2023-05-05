@@ -135,6 +135,10 @@
     <string name="TV_updatecat">Update category</string>
     <string name="btn_DeleteReminderr">Delete Reminder</string>
     <string name="TV_allRem">My Reminders</string>
+    <string name="TV_URemDes">Reminder :</string>
+    <string name="TV_URemDate">Date :</string>
+    <string name="TV_URemAmount">Amount :</string>
+    <string name="TV_URemType">Type :</string>
 
 
 </resources>

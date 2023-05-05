@@ -40,7 +40,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_btn"
         android:text="@string/btn_UpdateReminder"
@@ -53,15 +53,14 @@
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar7"
         android:layout_width="395dp"
-        android:layout_height="343dp"
+        android:layout_height="378dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
@@ -82,11 +81,15 @@
         android:id="@+id/TV_ReminderDescription"
         android:layout_width="212dp"
         android:layout_height="51dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/TV_ReminderDate"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.699"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
         app:layout_constraintTop_toTopOf="@+id/materialToolbar7" />
 
@@ -94,35 +97,105 @@
         android:id="@+id/TV_ReminderDate"
         android:layout_width="212dp"
         android:layout_height="51dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/TV_ReminderAmount"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderDescription" />
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
 
     <TextView
         android:id="@+id/TV_ReminderAmount"
         android:layout_width="212dp"
         android:layout_height="51dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/TV_ReminderType"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderDate" />
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
 
     <TextView
         android:id="@+id/TV_ReminderType"
         android:layout_width="212dp"
         android:layout_height="51dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        android:layout_marginBottom="16dp"
         android:textColor="@color/white"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar7"
-        app:layout_constraintTop_toBottomOf="@+id/TV_ReminderAmount" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar7"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        app:layout_constraintHorizontal_bias="0.699"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="55dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/TV_ReminderDescription"
+        app:layout_constraintEnd_toEndOf="@+id/materialToolbar7"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/TV_URemDes"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView25"
+        app:layout_constraintEnd_toStartOf="@+id/TV_ReminderDescription"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/TV_URemDate"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toStartOf="@+id/TV_ReminderDescription"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/TV_URemAmount"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView28"
+        app:layout_constraintEnd_toStartOf="@+id/TV_ReminderDescription"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="79dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/TV_URemType"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar7"
+        app:layout_constraintEnd_toStartOf="@+id/TV_ReminderDescription"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="@+id/materialToolbar7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

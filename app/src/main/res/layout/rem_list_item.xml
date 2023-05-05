@@ -19,14 +19,15 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id= "@+id/TV_RemName"
+                android:id="@+id/TV_RemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reminder Name"
                 android:layout_gravity="center"
-                android:gravity="center" android:textColor="@color/black"
+                android:gravity="center"
+                android:text="Reminder Name"
+                android:textColor="@color/Blue"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
