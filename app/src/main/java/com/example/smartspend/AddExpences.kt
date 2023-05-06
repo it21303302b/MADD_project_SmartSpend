@@ -54,6 +54,7 @@ class AddExpences : AppCompatActivity() {
         }
         if(expenceAmount.isEmpty()){
             etExpenceAmout.error = "Please enter Amount"
+            return
         }
 
         val ExpenceId= dbRef.push().key!!
