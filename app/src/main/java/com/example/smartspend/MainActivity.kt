@@ -3,14 +3,13 @@ package com.example.smartspend
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.smartspend.databinding.ActivityMainBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun userProfileActivity(view: View){
-        val intent = Intent(this, UserProfileActivity::class.java)
+        val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +48,18 @@ class MainActivity : AppCompatActivity() {
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val profileFab: FloatingActionButton = findViewById(R.id.floatingActionButton3)
+        profileFab.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
+    fun onProfileButtonClick(view: View) {
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+    }
+
     fun addReminder(view: View) {
         val intent = Intent(this, AddReminder::class.java)
         startActivity(intent)

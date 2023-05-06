@@ -40,29 +40,28 @@
         app:layout_constraintVertical_bias="0.098" />
 
     <EditText
-        android:id="@+id/ET_login_username"
+        android:id="@+id/emailET"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="172dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/person_icon"
+        android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="@string/ET_login_username"
-        android:inputType="textPersonName"
+        android:hint="@string/enter_email"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_loginTitle" />
 
     <EditText
-        android:id="@+id/ET_login_password"
+        android:id="@+id/passET"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -71,17 +70,17 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/ET_login_password"
-        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/ET_login_username"
-        app:layout_constraintStart_toStartOf="@+id/ET_login_username"
-        app:layout_constraintTop_toBottomOf="@+id/ET_login_username" />
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/emailET"
+        app:layout_constraintStart_toStartOf="@+id/emailET"
+        app:layout_constraintTop_toBottomOf="@+id/emailET" />
 
     <TextView
-        android:id="@+id/TV_forgotPassword"
+        android:id="@+id/forgotPasswordTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -90,8 +89,8 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
-        app:layout_constraintTop_toBottomOf="@+id/ET_login_password" />
+        app:layout_constraintEnd_toEndOf="@+id/passET"
+        app:layout_constraintTop_toBottomOf="@+id/passET" />
 
     <android.widget.Button
         android:id="@+id/btn_login"
@@ -103,9 +102,9 @@
         android:textColor="@color/white"
         android:textSize="@dimen/reg_btn_textSize"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
-        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
-        app:layout_constraintTop_toBottomOf="@+id/TV_forgotPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/passET"
+        app:layout_constraintStart_toStartOf="@+id/passET"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPasswordTv" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -115,8 +114,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
-        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
+        app:layout_constraintEnd_toEndOf="@+id/passET"
+        app:layout_constraintStart_toStartOf="@+id/passET"
         app:layout_constraintTop_toBottomOf="@+id/btn_login">
 
         <TextView
@@ -128,31 +127,14 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/TV_signUp"
+            android:id="@+id/TVsignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
             android:text="@string/TV_signUp"
             android:textColor="@color/Blue"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
     </LinearLayout>
-
-    <android.widget.Button
-        android:id="@+id/btn_signinWithGoogle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/google"
-        android:drawablePadding="50dp"
-        android:paddingLeft="20dp"
-        android:text="@string/btn_loginWithGoogle"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ET_login_password"
-        app:layout_constraintStart_toStartOf="@+id/ET_login_password"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
