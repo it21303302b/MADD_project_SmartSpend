@@ -31,38 +31,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_signUpWithGoogle"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/btn_exp"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:backgroundTint="@color/green_2"
-        android:text="@string/btn_inc"
-        android:textSize="@dimen/button_textsize"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_signUpWithGoogle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_signUpWithGoogle" />
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="378dp"
         android:layout_height="167dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/round_co"
         android:minHeight="?attr/actionBarSize"
@@ -70,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithGoogle" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar6" />
 
     <EditText
         android:id="@+id/edtExpenceAmount"
@@ -117,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
-        android:text="@string/TV_cat"
+        android:text="@string/tv_type"
         android:textColor="@color/black"
         android:textSize="@dimen/button_H2textsize"
         app:layout_constraintStart_toStartOf="parent"
