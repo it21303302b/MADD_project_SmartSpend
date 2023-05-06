@@ -2,11 +2,14 @@ package com.example.smartspend
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import java.text.DateFormat
+import java.util.*
 
 class AddExpences : AppCompatActivity() {
     private lateinit var etExpenceName: EditText
@@ -25,6 +28,9 @@ class AddExpences : AppCompatActivity() {
         etExpenceAmout = findViewById(R.id.edtExpenceAmount)
         btnAddExpence = findViewById(R.id.btnAddExpences) // Add this line to initialize btnAddCategory
 
+        etExpenceAmout.inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
+
+
         dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB")
 
         btnAddExpence.setOnClickListener{
@@ -36,7 +42,6 @@ class AddExpences : AppCompatActivity() {
     private fun saveExpenceData(){
 
         //getting values
-
         val expenceName = etExpenceName.text.toString()
         val expencedescription = etExpenceDescription.text.toString()
         val expenceAmount = etExpenceAmout.text.toString()
@@ -53,7 +58,11 @@ class AddExpences : AppCompatActivity() {
 
         val ExpenceId= dbRef.push().key!!
 
-        val expence = ExpenceModel(ExpenceId,expenceName,expencedescription,expenceAmount)
+        val calendar = Calendar.getInstance()
+        val currentDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(calendar.time)
+        val currentTime = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(calendar.time)
+
+        val expence = ExpenceModel(ExpenceId,expenceName,expencedescription,expenceAmount,currentDate,currentTime)
 
         dbRef.child(ExpenceId).setValue(expence).addOnCompleteListener{
             Toast.makeText(this,"Data inserted", Toast.LENGTH_SHORT).show()
@@ -67,4 +76,5 @@ class AddExpences : AppCompatActivity() {
         }
 
     }
+
 }

@@ -14,6 +14,7 @@ class CategoryAdapter(private val catList: ArrayList<CategoryModel>):
 
     private lateinit var mListner: OnItemClickListner
 
+
     interface OnItemClickListner{
         fun onItemClick(position: Int)
     }
@@ -47,6 +48,7 @@ class CategoryAdapter(private val catList: ArrayList<CategoryModel>):
                 clickListner.onItemClick(adapterPosition)
             }
         }
+
 
     }
 
