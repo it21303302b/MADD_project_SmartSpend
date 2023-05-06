@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Smart Spend2</string>
+
+<!--    W.M.B.B Weerakoon - IT21303302  -->
     <string name="title_home">Home</string>
     <string name="title_category">Categories</string>
-    <string name="title_reminders">Reminders</string>
     <string name="TV_Tbalance">Total Balance</string>
     <string name="TV_bal">Rs.2050.00</string>
     <string name="TV_tmonth">This month</string>
@@ -27,20 +28,6 @@
     <string name="TV_exbal4">-Rs.150.00</string>
     <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
-
-
-
-    <string name="TV_ReminderTitle">Today\'s Reminder</string>
-    <string name="TV_month1">1 April</string>
-    <string name="TV_expR1">House Rent</string>
-    <string name="TV_exbalRem1">-Rs.16000.00</string>
-    <string name="TV_Month2">15 April</string>
-    <string name="TV_expR2">Water Bill</string>
-    <string name="TV_exbalRem2">-Rs.1500.00</string>
-    <string name="TV_month3">20 April</string>
-    <string name="TV_expR3">Electricity Bill</string>
-    <string name="TV_exbalRem3">-Rs.8000.00</string>
-
     <string name="btn_exp">Expense</string>
     <string name="btn_inc">Income</string>
     <string name="edt_expname">Expense name</string>
@@ -59,18 +46,6 @@
     <string name="btn_addcat">Add Category</string>
     <string name="TV_updatecat">Update category</string>
     <string name="btn_updatecat">Update Category</string>
-    <string name="TV_addrem">Add Reminder</string>
-    <string name="TV_selectRem">Select Reminder Type</string>
-    <string name="edt_RemDescription">Reminder Description</string>
-    <string name="edt_RemAddDate">YYYY/MM/DD</string>
-    <string name="edt_AddDate">YYYY/MM/DD</string>
-    <string name="edt_RemAddTime">00:00</string>
-    <string name="btn_AddReminder">Add Reminder</string>
-    <string name="TV_UpdateRem">Update Reminder</string>
-    <string name="edt_UpdateDesReminder">Update Description</string>
-    <string name="edt_UpdateRemDate">YYYY/MM/DD</string>
-    <string name="edt_UpdateTimeReminder">00:00</string>
-    <string name="btn_UpdateReminder">Update Reminder</string>
     <string name="catId">Category ID</string>
     <string name="catIDdata">exampleID</string>
     <string name="catname">Example catagory</string>
@@ -82,12 +57,14 @@
     <string name="expAmountVal">Example amount</string>
     <string name="expID">Expence Id</string>
     <string name="expName1">Expence Name</string>
+    <string name="btn_updateExp">Update Expenses</string>
+    <string name="update_exp">update expence</string>
+    <string name="delete_exp">delete expence</string>
+    <string name="edtAmount">Enter Amount</string>
     <string name="expNameex">Example name</string>
 
-    <string name="edtAmount">Enter Amount</string>
-    <string name="btn_updateExp">Update Expenses</string>
 
-<!--    Ammaar M. A IT21303852-->
+    <!-- Ammaar M. A IT21303852-->
     <string name="enter_email">Enter Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="back_to_login">Back to Login</string>
@@ -130,4 +107,49 @@
     <string name="ET_newPassword">New Password</string>
     <string name="ET_confirmNewPassword">Confirm New Password</string>
     <string name="btn_confirmChangePassword">Change Password</string>
+
+
+    //IT21277122-D.W.S.S.W.M.R.M.B.B.Degaldoruwa-Reminder Function
+    <string name="title_reminders">Reminders</string>
+    <string name="btn_AddReminder">Add Reminder</string>
+    <string name="btn_UpdateReminder">Update Reminder</string>
+    <string name="btn_DeleteReminder">Delete Reminder</string>
+    <string name="edt_RemDescription">Reminder Description</string>
+    <string name="edt_RemAddDate">DD/MM/YYYY</string>
+    <string name="edt_AddDate">DD/MM/YYYY</string>
+    <string name="edt_UpdateDesReminder">Update Description</string>
+    <string name="edt_UpdateRemDate">DD/MM/YYYY</string>
+    <string name="edt_UpdateTimeReminder">00:00</string>
+    <string name="edt_RemAddTime">00:00</string>
+    <string name="TV_addrem">Add Reminder</string>
+    <string name="TV_selectRem">Select Reminder Type</string>
+    <string name="TV_ReminderDetails">Reminder Details</string>
+    <string name="TV_ReminderTitle">Today\'s Reminder</string>
+    <string name="TV_month1">1 April</string>
+    <string name="TV_expR1">House Rent</string>
+    <string name="TV_exbalRem1">-Rs.16000.00</string>
+    <string name="TV_Month2">15 April</string>
+    <string name="TV_expR2">Water Bill</string>
+    <string name="TV_exbalRem2">-Rs.1500.00</string>
+    <string name="TV_month3">20 April</string>
+    <string name="TV_expR3">Electricity Bill</string>
+    <string name="TV_exbalRem3">-Rs.8000.00</string>
+    <string-array name="reminder_type">
+        <item></item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+    <string name="error_message_reminder_type">Please select a reminder type</string>
+    <string name="edt_RemValue">Enter Amount</string>
+    <string name="btn_DeleteReminderr">Delete Reminder</string>
+    <string name="TV_allRem">My Reminders</string>
+    <string name="TV_URemDes">Reminder :</string>
+    <string name="TV_URemDate">Date :</string>
+    <string name="TV_URemAmount">Amount :</string>
+    <string name="TV_URemType">Type :</string>
+    <string name="tv_type">Type</string>
+
+
 </resources>

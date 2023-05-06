@@ -9,11 +9,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.smartspend.databinding.ActivityMainBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
 
     fun loginActivity(view: View){
         val intent = Intent(this, LoginActivity::class.java)
@@ -25,12 +27,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun userProfileActivity(view: View){
-        val intent = Intent(this, ProfileActivity::class.java)
-        startActivity(intent)
-    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Database Integration
+        val firebase : DatabaseReference = FirebaseDatabase.getInstance().getReference()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -48,25 +50,14 @@ class MainActivity : AppCompatActivity() {
         )
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        val profileFab: FloatingActionButton = findViewById(R.id.floatingActionButton3)
-        profileFab.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
     }
-    fun onProfileButtonClick(view: View) {
-        val intent = Intent(this, ProfileActivity::class.java)
-        startActivity(intent)
-    }
-
     fun addReminder(view: View) {
         val intent = Intent(this, AddReminder::class.java)
         startActivity(intent)
 
     }
     fun updateReminder(view: View) {
-        val intent = Intent(this, UpdateReminder::class.java)
+        val intent = Intent(this, ReminderDetailsActivity::class.java)
         startActivity(intent)
     }
     fun addExpence(view: View) {
@@ -84,11 +75,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-//    fun updateCategory(view: View) {
-//        val intent = Intent(this, UpdateCategory::class.java)
-//        startActivity(intent)
-//
-//    }
+    fun updateCategory(view: View) {
+        val intent = Intent(this, UpdateCategory::class.java)
+        startActivity(intent)
+
+    }
 
 
 }
