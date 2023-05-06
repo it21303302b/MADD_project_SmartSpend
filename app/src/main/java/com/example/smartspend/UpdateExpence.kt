@@ -8,6 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class UpdateExpence : AppCompatActivity() {
 
@@ -118,8 +121,16 @@ class UpdateExpence : AppCompatActivity() {
         expAmount:String
     ){
         val dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB").child(id)
-        val expInfo = ExpenceModel(id,expName,expdescription,expAmount)
+        val calendar = Calendar.getInstance()
+        val expInfo = ExpenceModel(
+            id,
+            expName,
+            expdescription,
+            expAmount,
+            DateFormat.getDateInstance(DateFormat.MEDIUM).format(calendar.time)
+        )
         dbRef.setValue(expInfo)
     }
+
 
 }

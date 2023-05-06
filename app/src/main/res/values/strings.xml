@@ -137,6 +137,9 @@
     <string name="confirm_new_password">Confirm New Password</string>
     <string name="edtAmount">Enter Amount</string>
     <string name="btn_updateExp">Update Expenses</string>
+    <string name="update_exp">update expence</string>
+    <string name="delete_exp">delete expence</string>
+    <string name="tv_type">Type</string>
 
 
 </resources>
