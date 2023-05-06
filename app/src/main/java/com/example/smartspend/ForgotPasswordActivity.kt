@@ -48,5 +48,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding.backToLoginBtn.setOnClickListener {
             finish()
         }
+
+
     }
 }
