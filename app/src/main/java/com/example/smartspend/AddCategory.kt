@@ -2,39 +2,63 @@ package com.example.smartspend
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
-import com.example.smartspend.databinding.ActivityAddcategoryBinding
-import com.example.smartspend.databinding.ActivityMainBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class AddCategory : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddcategoryBinding
-    private lateinit var database: DatabaseReference
+    private lateinit var etCategoryName: EditText
+    private lateinit var etDescription: EditText
+    private lateinit var btnAddCategory: Button
+
+    private lateinit var dbRef : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddcategoryBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_add_category)
 
-        binding.btnAddCategory.setOnClickListener {
+        etCategoryName = findViewById(R.id.edtAddcategory)
+        etDescription = findViewById(R.id.edtAddDescription)
+        btnAddCategory = findViewById(R.id.submitCategory) // Add this line to initialize btnAddCategory
 
-            val category = binding.edtCategory.text.toString()
-            val description = binding.edtDescription.text.toString()
+        dbRef = FirebaseDatabase.getInstance().getReference("CategoryDB")
 
-            database = FirebaseDatabase.getInstance().getReference("Categories")
-            val Category = Category(category,description)
-            database.child(category).setValue(Category).addOnSuccessListener {
-
-                binding.edtCategory.text.clear()
-                binding.edtDescription.text.clear()
-
-                Toast.makeText(this, "Successfully saved category", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener{
-                Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
-            }
-
+        btnAddCategory.setOnClickListener{
+            saveCategoryData()
         }
+
+    }
+
+    private fun saveCategoryData(){
+
+        //getting values
+
+        val categoryName = etCategoryName.text.toString()
+        val description = etDescription.text.toString()
+
+        if(categoryName.isEmpty()){
+            etCategoryName.error = "Please enter category name"
+        }
+        if(description.isEmpty()){
+            etDescription.error = "Please enter description"
+        }
+
+        val categoryId= dbRef.push().key!!
+
+        val category = CategoryModel(categoryId,categoryName,description)
+
+        dbRef.child(categoryId).setValue(category).addOnCompleteListener{
+            Toast.makeText(this,"Data inserted",Toast.LENGTH_SHORT).show()
+
+            etCategoryName.text.clear()
+            etDescription.text.clear()
+
+        }.addOnFailureListener { err ->
+            Toast.makeText(this,"Error ${err.message}",Toast.LENGTH_SHORT).show()
+        }
+
     }
 }

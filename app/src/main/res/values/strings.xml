@@ -1,21 +1,8 @@
 <resources>
     <string name="app_name">Smart Spend2</string>
 
-    //IT21303302-W.M.B.B.Weerakoon-Expense Tracker Function
-    <string name="btn_daily">Daily</string>
-    <string name="btn_weekly">Weekly</string>
-    <string name="btn_monthly">monthly</string>
-    <string name="btn_yearly">Yearly</string>
-    <string name="btn_exp">Expense</string>
-    <string name="btn_plus">+</string>
-    <string name="btn_inc">Income</string>
-    <string name="btn_addexp">Add</string>
-    <string name="btn_updateexp">Update</string>
-    <string name="edt_expname">Expense name</string>
-    <string name="edt_description">Description</string>
-    <string name="edt_amount">Amount</string>
-    <string name="TV_updateex">Update Expense</string>
     <string name="title_home">Home</string>
+    <string name="title_category">Categories</string>
     <string name="TV_Tbalance">Total Balance</string>
     <string name="TV_bal">Rs.2050.00</string>
     <string name="TV_tmonth">This month</string>
@@ -23,6 +10,10 @@
     <string name="TV_out">Outcome</string>
     <string name="TV_outcome">Rs.-950.00</string>
     <string name="TV_income">Rs.3000.00</string>
+    <string name="btn_daily">Daily</string>
+    <string name="btn_weekly">Weekly</string>
+    <string name="btn_monthly">monthly</string>
+    <string name="btn_yearly">Yearly</string>
     <string name="TV_day1">16 Thursday</string>
     <string name="TV_exp1">For the bus</string>
     <string name="TV_exbal1">-Rs.600.00</string>
@@ -34,58 +25,92 @@
     <string name="TV_day3">13 Monday</string>
     <string name="TV_exp4">Food</string>
     <string name="TV_exbal4">-Rs.150.00</string>
+    <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
+    <string name="btn_exp">Expense</string>
+    <string name="btn_inc">Income</string>
+    <string name="edt_expname">Expense name</string>
+    <string name="edt_description">Description</string>
+    <string name="edt_amount">Amount</string>
+    <string name="TV_cat">Select category</string>
+    <string name="btn_addexp">Add</string>
+    <string name="TV_updateex">Update Expense</string>
+    <string name="btn_updateexp">Update</string>
+    <string name="TV_category">Category</string>
+    <string name="TV_cat1">Food</string>
+    <string name="TV_catdescription">Description</string>
+    <string name="TV_addcat">Add Category</string>
+    <string name="edt_catname">Category</string>
+    <string name="edt_catdescription">Description</string>
+    <string name="btn_addcat">Add Category</string>
+    <string name="TV_updatecat">Update category</string>
+    <string name="btn_updatecat">Update Category</string>
+    <string name="catId">Category ID</string>
+    <string name="catIDdata">exampleID</string>
+    <string name="catname">Example catagory</string>
+    <string name="tvcurentDescription">Example description</string>
+    <string name="deleteCategorybtn">Delete category</string>
+    <string name="btn_deleteCat">delete category</string>
+    <string name="expName">Expence Name</string>
+    <string name="expAmount">Amount</string>
+    <string name="expAmountVal">Example amount</string>
+    <string name="expID">Expence Id</string>
+    <string name="expName1">Expence Name</string>
+    <string name="btn_updateExp">Update Expenses</string>
+    <string name="update_exp">update expence</string>
+    <string name="delete_exp">delete expence</string>
+    <string name="edtAmount">Enter Amount</string>
+    <string name="expNameex">Example name</string>
 
 
-    //IT21303852-M.A.Ammaar-Account Management Function
-    <string name="btn_login">Login</string>
-    <string name="btn_register">Register</string>
-    <string name="btn_loginWithGoogle">Log in with Google</string>
-    <string name="btn_signupWithGoogle">Sign up with Google</string>
-    <string name="btn_deleteAccount">Delete Profile</string>
-    <string name="btn_EditAccount">Edit Profile</string>
-    <string name="btn_sendPasswordResetLink">Send Password Reset Link</string>
-    <string name="btn_changePassword">Change Password</string>
-    <string name="btn_updateProfile">Update Profile</string>
-    <string name="btn_confirmChangePassword">Change Password</string>
-    <string name="ET_login_username">Enter Username</string>
-    <string name="ET_login_password">Enter Password</string>
+    <!-- Ammaar M. A IT21303852-->
+    <string name="enter_email">Enter Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="gender">Gender</string>
+    <string name="update_password">Update Password</string>
+    <string name="logout">Logout</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="enter_current_password">Enter Current Password</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="TV_registerTitle">Register</string>
     <string name="ET_inputUsername">Username</string>
     <string name="ET_inputEmail">Email</string>
-    <string name="EV_usernameHeading">Username</string>
     <string name="ET_inputPassword">Password</string>
     <string name="ET_inputConfirmPassword">Confirm Password</string>
-    <string name="ET_editUsername">John Doe</string>
-    <string name="ET_editEmail">Johndoe@gmail.com</string>
-    <string name="ET_editPassword">johndoe123#@</string>
-    <string name="ET_editOccupation">Businessman</string>
-    <string name="ET_age">38</string>
-    <string name="ET_oldPassword">Old Password</string>
-    <string name="ET_newPassword">New Password</string>
-    <string name="ET_confirmNewPassword">Confirm New Password</string>
-    <string name="TV_registerTitle">Register</string>
+    <string name="btn_register">Register</string>
     <string name="TV_alreadyHaveAnAccount">Already Have An Account?</string>
     <string name="TV_loginTitle">Login</string>
     <string name="TV_forgotPassword">Forgot Password?</string>
+    <string name="btn_login">Login</string>
     <string name="TV_signUp"> Sign Up</string>
     <string name="TV_DontHaveAnAccount">Don\'t have an account? </string>
+    <string name="ET_login_username">Enter Username</string>
+    <string name="ET_login_password">Enter Password</string>
     <string name="TV_userEmailView">Johndoe@gmail.com</string>
     <string name="TV_userName">John Doe</string>
-    <string name="TV_occupation">Businessman</string>
-    <string name="TV_age">38</string>
-    <string name="TV_occupationHeading">Occupation</string>
-    <string name="TV_ageHeading">Age</string>
+    <string name="EV_usernameHeading">Username</string>
     <string name="TV_userEmailHeading">Email</string>
+    <string name="btn_deleteAccount">Delete Profile</string>
+    <string name="btn_EditAccount">Edit Profile</string>
     <string name="TV_profileTitle">Profile</string>
     <string name="TV_forgotPasswordTitle">Forgot Password</string>
+    <string name="btn_sendPasswordResetLink">Send Password Reset Link</string>
     <string name="TV_editProfileTitle">Edit Profile</string>
+    <string name="btn_changePassword">Change Password</string>
+    <string name="btn_updateProfile">Update Profile</string>
     <string name="TV_changePasswordTitle">Change Password</string>
+    <string name="ET_oldPassword">Old Password</string>
+    <string name="ET_newPassword">New Password</string>
+    <string name="ET_confirmNewPassword">Confirm New Password</string>
+    <string name="btn_confirmChangePassword">Change Password</string>
 
 
     //IT21277122-D.W.S.S.W.M.R.M.B.B.Degaldoruwa-Reminder Function
     <string name="title_reminders">Reminders</string>
     <string name="btn_AddReminder">Add Reminder</string>
-    <string name="btn_addcat">Add Category</string>
     <string name="btn_UpdateReminder">Update Reminder</string>
     <string name="btn_DeleteReminder">Delete Reminder</string>
     <string name="edt_RemDescription">Reminder Description</string>
@@ -117,22 +142,6 @@
     </string-array>
     <string name="error_message_reminder_type">Please select a reminder type</string>
     <string name="edt_RemValue">Enter Amount</string>
-
-
-
-
-
-    //IT21277122-IT21303852-IT21303302-Category Function
-    <string name="title_category">Categories</string>
-    <string name="btn_updatecat">Update Category</string>
-    <string name="edt_catname">Category</string>
-    <string name="edt_catdescription">Description</string>
-    <string name="TV_cat">Select category</string>
-    <string name="TV_category">Category</string>
-    <string name="TV_cat1">Food</string>
-    <string name="TV_catdescription">Description</string>
-    <string name="TV_addcat">Add Category</string>
-    <string name="TV_updatecat">Update category</string>
     <string name="btn_DeleteReminderr">Delete Reminder</string>
     <string name="TV_allRem">My Reminders</string>
     <string name="TV_URemDes">Reminder :</string>

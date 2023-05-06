@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_signUpWithGoogle" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/edtExpenceAmount"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="12dp"
@@ -82,11 +82,11 @@
         android:hint="@string/edt_amount"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/edt_description"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Expencedescription"
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/edt_category"
+        android:id="@+id/edtExpencename"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
@@ -99,7 +99,7 @@
         android:textColor="@color/white"/>
 
     <EditText
-        android:id="@+id/edt_description"
+        android:id="@+id/edt_Expencedescription"
         android:layout_width="330dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
@@ -108,7 +108,7 @@
         android:hint="@string/edt_description"
         app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
         app:layout_constraintStart_toStartOf="@+id/materialToolbar"
-        app:layout_constraintTop_toBottomOf="@+id/edt_category"
+        app:layout_constraintTop_toBottomOf="@+id/edtExpencename"
         android:textColor="@color/white" />
 
     <TextView
@@ -124,7 +124,7 @@
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerExpencesType"
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
