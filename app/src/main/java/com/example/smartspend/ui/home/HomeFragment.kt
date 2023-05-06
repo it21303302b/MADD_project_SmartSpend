@@ -64,17 +64,15 @@ class HomeFragment : Fragment() {
 
         dbRef = FirebaseDatabase.getInstance().getReference("ExpencesDB")
 
-//        val tvExpenceDate: TextView = binding.tvExpenceDate
-//        tvExpenceDate.text = SimpleDateFormat("dd MMM yyyy", Locale.getDefault()).format(Date())
-
-
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 expList.clear()
+                var totalExpence = 0.0 // Initialize totalExpence to 0.0
                 if (snapshot.exists()){
                     for (catSnap in snapshot.children){
                         val expData = catSnap.getValue(ExpenceModel::class.java)
                         expList.add(expData!!)
+                        expData?.expenceAmount?.toDoubleOrNull()?.let { totalExpence += it } // Add the expenceAmount to totalExpence
                     }
                     val mAdapter = ExpenceAdapter(expList)
                     expRecyclerView.adapter = mAdapter
@@ -83,31 +81,26 @@ class HomeFragment : Fragment() {
                         override fun onItemClick(position: Int) {
                             val intent = Intent(requireActivity(), UpdateExpence::class.java)
 
-
                             //put extra
                             intent.putExtra("expenceId",expList[position].expenceId)
                             intent.putExtra("expenceName",expList[position].expenceName)
                             intent.putExtra("expenceDescription",expList[position].expenceDescription)
                             intent.putExtra("expenceAmount",expList[position].expenceAmount)
                             startActivity(intent)
-
-
                         }
-
-
                     })
 
                     expRecyclerView.visibility = View.VISIBLE
                 }
+                binding.ecpenceTotal.text = String.format("%.2f", totalExpence) // Set the text of ecpenceTotal to the formatted value of totalExpence
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
-
     }
+
 
 
     override fun onDestroyView() {

@@ -44,6 +44,7 @@ class AddCategory : AppCompatActivity() {
         }
         if(description.isEmpty()){
             etDescription.error = "Please enter description"
+            return
         }
 
         val categoryId= dbRef.push().key!!
