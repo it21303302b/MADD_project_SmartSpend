@@ -28,48 +28,7 @@
     <string name="btn_plus">+</string>
     <string name="TV_addexpense">Add Expense</string>
 
-    <string name="TV_registerTitle">Register</string>
-    <string name="ET_inputUsername">Username</string>
-    <string name="ET_inputEmail">Email</string>
-    <string name="ET_inputPassword">Password</string>
-    <string name="ET_inputConfirmPassword">Confirm Password</string>
-    <string name="btn_register">Register</string>
-    <string name="TV_alreadyHaveAnAccount">Already Have An Account?</string>
-    <string name="TV_loginTitle">Login</string>
-    <string name="TV_forgotPassword">Forgot Password?</string>
-    <string name="btn_login">Login</string>
-    <string name="TV_signUp"> Sign Up</string>
-    <string name="TV_DontHaveAnAccount">Don\'t have an account? </string>
-    <string name="ET_login_username">Enter Username</string>
-    <string name="ET_login_password">Enter Password</string>
-    <string name="btn_loginWithGoogle">Log in with Google</string>
-    <string name="btn_signupWithGoogle">Sign up with Google</string>
-    <string name="TV_userEmailView">Johndoe@gmail.com</string>
-    <string name="TV_userName">John Doe</string>
-    <string name="TV_occupation">Businessman</string>
-    <string name="TV_age">38</string>
-    <string name="EV_usernameHeading">Username</string>
-    <string name="TV_occupationHeading">Occupation</string>
-    <string name="TV_ageHeading">Age</string>
-    <string name="TV_userEmailHeading">Email</string>
-    <string name="btn_deleteAccount">Delete Profile</string>
-    <string name="btn_EditAccount">Edit Profile</string>
-    <string name="TV_profileTitle">Profile</string>
-    <string name="TV_forgotPasswordTitle">Forgot Password</string>
-    <string name="btn_sendPasswordResetLink">Send Password Reset Link</string>
-    <string name="TV_editProfileTitle">Edit Profile</string>
-    <string name="ET_editUsername">John Doe</string>
-    <string name="ET_editEmail">Johndoe@gmail.com</string>
-    <string name="ET_editPassword">johndoe123#@</string>
-    <string name="ET_editOccupation">Businessman</string>
-    <string name="ET_age">38</string>
-    <string name="btn_changePassword">Change Password</string>
-    <string name="btn_updateProfile">Update Profile</string>
-    <string name="TV_changePasswordTitle">Change Password</string>
-    <string name="ET_oldPassword">Old Password</string>
-    <string name="ET_newPassword">New Password</string>
-    <string name="ET_confirmNewPassword">Confirm New Password</string>
-    <string name="btn_confirmChangePassword">Change Password</string>
+
 
     <string name="TV_ReminderTitle">Today\'s Reminder</string>
     <string name="TV_month1">1 April</string>
@@ -124,6 +83,11 @@
     <string name="expID">Expence Id</string>
     <string name="expName1">Expence Name</string>
     <string name="expNameex">Example name</string>
+
+    <string name="edtAmount">Enter Amount</string>
+    <string name="btn_updateExp">Update Expenses</string>
+
+<!--    Ammaar M. A IT21303852-->
     <string name="enter_email">Enter Email</string>
     <string name="reset_password">Reset Password</string>
     <string name="back_to_login">Back to Login</string>
@@ -135,8 +99,35 @@
     <string name="enter_current_password">Enter Current Password</string>
     <string name="enter_new_password">Enter New Password</string>
     <string name="confirm_new_password">Confirm New Password</string>
-    <string name="edtAmount">Enter Amount</string>
-    <string name="btn_updateExp">Update Expenses</string>
-
-
+    <string name="TV_registerTitle">Register</string>
+    <string name="ET_inputUsername">Username</string>
+    <string name="ET_inputEmail">Email</string>
+    <string name="ET_inputPassword">Password</string>
+    <string name="ET_inputConfirmPassword">Confirm Password</string>
+    <string name="btn_register">Register</string>
+    <string name="TV_alreadyHaveAnAccount">Already Have An Account?</string>
+    <string name="TV_loginTitle">Login</string>
+    <string name="TV_forgotPassword">Forgot Password?</string>
+    <string name="btn_login">Login</string>
+    <string name="TV_signUp"> Sign Up</string>
+    <string name="TV_DontHaveAnAccount">Don\'t have an account? </string>
+    <string name="ET_login_username">Enter Username</string>
+    <string name="ET_login_password">Enter Password</string>
+    <string name="TV_userEmailView">Johndoe@gmail.com</string>
+    <string name="TV_userName">John Doe</string>
+    <string name="EV_usernameHeading">Username</string>
+    <string name="TV_userEmailHeading">Email</string>
+    <string name="btn_deleteAccount">Delete Profile</string>
+    <string name="btn_EditAccount">Edit Profile</string>
+    <string name="TV_profileTitle">Profile</string>
+    <string name="TV_forgotPasswordTitle">Forgot Password</string>
+    <string name="btn_sendPasswordResetLink">Send Password Reset Link</string>
+    <string name="TV_editProfileTitle">Edit Profile</string>
+    <string name="btn_changePassword">Change Password</string>
+    <string name="btn_updateProfile">Update Profile</string>
+    <string name="TV_changePasswordTitle">Change Password</string>
+    <string name="ET_oldPassword">Old Password</string>
+    <string name="ET_newPassword">New Password</string>
+    <string name="ET_confirmNewPassword">Confirm New Password</string>
+    <string name="btn_confirmChangePassword">Change Password</string>
 </resources>
