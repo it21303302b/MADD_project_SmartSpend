@@ -100,8 +100,41 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val editProfileButton = findViewById<Button>(R.id.btn_update_profile)
+
+        editProfileButton.setOnClickListener {
+            val editProfileIntent = Intent(this, EditProfileActivity::class.java)
+            startActivity(editProfileIntent)
+
+        }
+
 
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        val currentUser: FirebaseUser? = auth.currentUser
+
+        if (currentUser != null) {
+            val userEmail = currentUser.email
+            userEmailView.text = userEmail
+
+            val database = FirebaseDatabase.getInstance()
+            val usersRef = database.getReference("users")
+
+            usersRef.child(currentUser.uid).get().addOnSuccessListener { dataSnapshot ->
+                val user = dataSnapshot.getValue(User::class.java)
+                if (user != null) {
+                    nameView.text = user.name
+                    genderView.text = user.gender
+                }
+            }.addOnFailureListener {
+                // Handle database read failure
+            }
+        }
+    }
+
 
     fun onLogoutButtonClick(view: View) {
         // Sign out the user

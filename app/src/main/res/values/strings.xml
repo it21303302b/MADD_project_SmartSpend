@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Smart Spend</string>
 
-<!--    W.M.B.B Weerakoon - IT21303302  -->
+    <!--    W.M.B.B Weerakoon - IT21303302  -->
     <string name="title_home">Home</string>
     <string name="title_category">Categories</string>
     <string name="TV_Tbalance">Total Balance</string>
@@ -150,6 +150,7 @@
     <string name="TV_URemAmount">Amount :</string>
     <string name="TV_URemType">Type :</string>
     <string name="tv_type">Type</string>
+    <string name="update_profile">Update Profile</string>
 
 
 </resources>

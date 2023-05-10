@@ -6,6 +6,7 @@ import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.DateFormat
@@ -57,7 +58,8 @@ class AddExpences : AppCompatActivity() {
             return
         }
 
-        val ExpenceId= dbRef.push().key!!
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        val ExpenceId= dbRef.child(userId).push().key!!
 
         val calendar = Calendar.getInstance()
         val currentDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(calendar.time)
@@ -65,7 +67,7 @@ class AddExpences : AppCompatActivity() {
 
         val expence = ExpenceModel(ExpenceId,expenceName,expencedescription,expenceAmount,currentDate,currentTime)
 
-        dbRef.child(ExpenceId).setValue(expence).addOnCompleteListener{
+        dbRef.child(userId).child(ExpenceId).setValue(expence).addOnCompleteListener{
             Toast.makeText(this,"Data inserted", Toast.LENGTH_SHORT).show()
 
             etExpenceName.text.clear()
@@ -77,5 +79,6 @@ class AddExpences : AppCompatActivity() {
         }
 
     }
+
 
 }
