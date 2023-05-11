@@ -47,6 +47,7 @@ class AddExpences : AppCompatActivity() {
         val expencedescription = etExpenceDescription.text.toString()
         val expenceAmount = etExpenceAmout.text.toString()
 
+        //validate inputs
         if(expenceName.isEmpty()){
             etExpenceName.error = "Please enter category name"
         }
