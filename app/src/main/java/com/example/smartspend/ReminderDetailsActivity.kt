@@ -58,36 +58,52 @@ class ReminderDetailsActivity : AppCompatActivity() {
 //        }
 //    }
 
+//    private fun deleteRecord(rId: String) {
+//        val currentUser = FirebaseAuth.getInstance().currentUser
+//        if (currentUser != null) {
+//            val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
+//            val mTask = dbRef.removeValue()
+//
+//            // Create a confirmation dialog
+//            val builder = AlertDialog.Builder(this)
+//            builder.setMessage("Are you sure you want to delete this reminder?")
+//                .setCancelable(false)
+//                .setPositiveButton("Yes") { _, _ ->
+//                    // Delete the record
+//                    mTask.addOnSuccessListener {
+//                        Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
+//                        finish() // Close this activity and return to the previous activity
+//                    }.addOnFailureListener { error ->
+//                        Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//                .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
+//
+//            // Show the dialog
+//            val alert = builder.create()
+//            alert.show()
+//        }else {
+//            Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
+//        }
+//
+//    }
+
     private fun deleteRecord(rId: String) {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
-            val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
+            val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(currentUser.uid).child(rId)
             val mTask = dbRef.removeValue()
 
-            // Create a confirmation dialog
-            val builder = AlertDialog.Builder(this)
-            builder.setMessage("Are you sure you want to delete this reminder?")
-                .setCancelable(false)
-                .setPositiveButton("Yes") { _, _ ->
-                    // Delete the record
-                    mTask.addOnSuccessListener {
-                        Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
-                        finish() // Close this activity and return to the previous activity
-                    }.addOnFailureListener { error ->
-                        Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
-                    }
-                }
-                .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
-
-            // Show the dialog
-            val alert = builder.create()
-            alert.show()
-        }else {
+            mTask.addOnSuccessListener {
+                Toast.makeText(this, "Reminder deleted", Toast.LENGTH_LONG).show()
+                finish() // Close this activity and return to the previous activity
+            }.addOnFailureListener { error ->
+                Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+            }
+        } else {
             Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
         }
-
     }
-
 
 
 
