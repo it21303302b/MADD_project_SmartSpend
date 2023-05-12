@@ -30,21 +30,38 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.emailET.text.toString()
             val pass = binding.passET.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty()) {
-                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+            // Validate email and password fields
+            if (email.isEmpty()) {
+                binding.emailET.error = "Email is required"
+                binding.emailET.requestFocus()
+                return@setOnClickListener
             }
-        }
 
+            if (pass.isEmpty()) {
+                binding.passET.error = "Password is required"
+                binding.passET.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.emailET.error = "Invalid email address"
+                binding.emailET.requestFocus()
+                return@setOnClickListener
+            }
+
+            // Sign in with email and password if fields are valid
+            firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                } else {
+                    val errorMessage = "Failed to sign in. Please check your email and password and try again."
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        }
 
         // Set up the click listener for the "Forgot password" text view
         binding.forgotPasswordTv.setOnClickListener {
