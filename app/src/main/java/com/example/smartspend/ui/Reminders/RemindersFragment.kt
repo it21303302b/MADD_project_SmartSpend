@@ -16,6 +16,7 @@ import com.example.smartspend.RemAdapter
 import com.example.smartspend.ReminderDetailsActivity
 import com.example.smartspend.ReminderModel
 import com.example.smartspend.databinding.FragmentRemindersBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 
@@ -64,7 +65,8 @@ class RemindersFragment : Fragment() {
         remRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
-        val dbRef = FirebaseDatabase.getInstance().getReference("Reminders")
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid // Get the current user's UID
+        val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(userId)
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

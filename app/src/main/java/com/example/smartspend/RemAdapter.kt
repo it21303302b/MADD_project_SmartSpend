@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class RemAdapter(private val remList: ArrayList<ReminderModel>) : RecyclerView.Adapter<RemAdapter.ViewHolder>() {
 
@@ -46,6 +48,30 @@ class RemAdapter(private val remList: ArrayList<ReminderModel>) : RecyclerView.A
         }
 
 
+    }
+
+    init {
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        val dbRef: DatabaseReference = FirebaseDatabase.getInstance().getReference("Reminders")
+        val expList = ArrayList<ReminderModel>()
+        dbRef.orderByChild("userId").equalTo(userId).addValueEventListener(object :
+            ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                expList.clear()
+                for (expenseSnapshot in snapshot.children) {
+                    val expense = expenseSnapshot.getValue(ReminderModel::class.java)
+                    expense?.let {
+                        expList.add(it)
+                    }
+                }
+                notifyDataSetChanged()
+            }
+
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle database error
+            }
+        })
     }
 
 }

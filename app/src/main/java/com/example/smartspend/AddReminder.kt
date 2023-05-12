@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.core.content.ContextCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -101,12 +102,12 @@ class AddReminder : AppCompatActivity() {
         }
 
 
-
-        val remId = dbRef.push().key!!
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        val remId = dbRef.child(userId).push().key!!
 
         val reminder = ReminderModel(remId, reminderDes, reminderDate, reminderAmount,reminderType)
 
-        dbRef.child(remId).setValue(reminder)
+        dbRef.child(userId).child(remId).setValue(reminder)
             .addOnCompleteListener {
                 Toast.makeText(this,"Reminder Added Successfully", Toast.LENGTH_LONG).show()
 

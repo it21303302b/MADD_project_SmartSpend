@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.example.smartspend.ui.Reminders.RemindersFragment
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class ReminderDetailsActivity : AppCompatActivity() {
@@ -57,28 +58,51 @@ class ReminderDetailsActivity : AppCompatActivity() {
 //        }
 //    }
 
+//    private fun deleteRecord(rId: String) {
+//        val currentUser = FirebaseAuth.getInstance().currentUser
+//        if (currentUser != null) {
+//            val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
+//            val mTask = dbRef.removeValue()
+//
+//            // Create a confirmation dialog
+//            val builder = AlertDialog.Builder(this)
+//            builder.setMessage("Are you sure you want to delete this reminder?")
+//                .setCancelable(false)
+//                .setPositiveButton("Yes") { _, _ ->
+//                    // Delete the record
+//                    mTask.addOnSuccessListener {
+//                        Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
+//                        finish() // Close this activity and return to the previous activity
+//                    }.addOnFailureListener { error ->
+//                        Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+//                    }
+//                }
+//                .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
+//
+//            // Show the dialog
+//            val alert = builder.create()
+//            alert.show()
+//        }else {
+//            Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
+//        }
+//
+//    }
+
     private fun deleteRecord(rId: String) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
-        val mTask = dbRef.removeValue()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(currentUser.uid).child(rId)
+            val mTask = dbRef.removeValue()
 
-        // Create a confirmation dialog
-        val builder = AlertDialog.Builder(this)
-        builder.setMessage("Are you sure you want to delete this reminder?")
-            .setCancelable(false)
-            .setPositiveButton("Yes") { _, _ ->
-                // Delete the record
-                mTask.addOnSuccessListener {
-                    Toast.makeText(this, "Reminder Data Deleted", Toast.LENGTH_LONG).show()
-                    finish() // Close this activity and return to the previous activity
-                }.addOnFailureListener { error ->
-                    Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
-                }
+            mTask.addOnSuccessListener {
+                Toast.makeText(this, "Reminder deleted", Toast.LENGTH_LONG).show()
+                finish() // Close this activity and return to the previous activity
+            }.addOnFailureListener { error ->
+                Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
             }
-            .setNegativeButton("No") { dialog, _ -> dialog.cancel() }
-
-        // Show the dialog
-        val alert = builder.create()
-        alert.show()
+        } else {
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_LONG).show()
+        }
     }
 
 
@@ -149,13 +173,18 @@ class ReminderDetailsActivity : AppCompatActivity() {
         alertDialog.show()
 
         btnUpdateReminder.setOnClickListener{
-            updateRemData(
-                remId,
-                updateRemDes.text.toString(),
-                updateRemDate.text.toString(),
-                updateRemAmount.text.toString(),
-                updateRemType.selectedItem.toString()
-            )
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
+            if (userId != null) {
+                updateRemData(
+                    userId,
+                    remId,
+                    updateRemDes.text.toString(),
+                    updateRemDate.text.toString(),
+                    updateRemAmount.text.toString(),
+                    updateRemType.selectedItem.toString()
+                )
+            }
+
 
             Toast.makeText(applicationContext,"Reminder Data Updated",Toast.LENGTH_LONG).show()
 
@@ -172,13 +201,14 @@ class ReminderDetailsActivity : AppCompatActivity() {
     }
 
     private fun updateRemData(
+        userId: String,
         rId:String,
         rDes:String,
         rDate:String,
         rAmount:String,
         rType:String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(rId)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Reminders").child(userId).child(rId)
         val remInfo = ReminderModel(rId, rDes, rDate, rAmount, rType)
         dbRef.setValue(remInfo)
     }
